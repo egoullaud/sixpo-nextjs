@@ -135,7 +135,6 @@ function home() {
         lg:flex-row lg:items-start lg:px-4"
       >
         <Donations />
-
         <Form />
       </section>
     </div>
