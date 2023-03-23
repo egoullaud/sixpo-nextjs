@@ -3,22 +3,27 @@ import React from "react";
 function Form() {
   return (
     <div
-      className="w-[90%]
-          md:w-[75%]
-          lg:w-[50%]
-          lg:px-[1rem]"
+      className="w-[100%] mb-[2rem] bg-black text-white flex flex-col justify-center items-center pt-5
+      lg:mx-3 lg:w-[50%] "
+
+      // w-[90%]
+      //     md:w-[75%]
+      //     lg:w-[45%]
+      //     lg:px-[2rem]"
     >
       <h1
-        className="text-5xl font-bold mt-[5rem] mb-[3rem] text-center text-white
-                md:text-5xl
-                lg:text-4xl"
+        className="text-5xl font-bold mb-[3rem] text-center
+        md:text-5xl 
+        lg:text-5xl"
       >
         Contact Us
       </h1>
       <form
         // action="https://formsubmit.co/96314122bac3ce02edae763bc47fe7e0"
         // method="POST"
-        className="space-y-2 py-10"
+        className="space-y-2 py-5 w-[90%]
+        md:w-[70%]
+        lg:w-[75%]"
       >
         {/* <input type="text" name="_honey" className="hidden" />
           <input type="hidden" name="_captcha" value="false" /> */}
