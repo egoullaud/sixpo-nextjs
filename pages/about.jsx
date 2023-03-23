@@ -5,6 +5,8 @@ import coupleSmile from "../public/couple-smile.jpg";
 import handHold from "../public/hand-hold.jpg";
 import Link from "next/link";
 import Sponsors from "@/components/Sponsors";
+import Donations from "@/components/Donations";
+import Form from "@/components/Form";
 
 function about() {
   return (
@@ -199,6 +201,13 @@ function about() {
         </div>
         {/* sponsors */}
         {/* <Sponsors /> */}
+      </section>
+      <section
+        className="bg-black flex flex-col items-center justify-center py-[5rem]
+        lg:flex-row lg:items-start lg:px-4"
+      >
+        <Donations />
+        <Form />
       </section>
     </div>
   );
