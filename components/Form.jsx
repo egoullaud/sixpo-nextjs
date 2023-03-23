@@ -24,7 +24,7 @@ function Form() {
           <input type="hidden" name="_captcha" value="false" /> */}
         <div>
           <label
-            for="name"
+            htmlFor="name"
             className="block mb-2 text-sm font-medium text-white"
           >
             Your Name
@@ -42,7 +42,7 @@ function Form() {
         </div>
         <div>
           <label
-            for="email"
+            htmlFor="email"
             className="block mb-2 text-sm font-medium text-white"
           >
             Your email
@@ -60,7 +60,7 @@ function Form() {
         </div>
         <div>
           <label
-            for="text"
+            htmlFor="text"
             className="block mb-2 text-sm font-medium text-white"
           >
             Your Phone Number
@@ -75,7 +75,7 @@ function Form() {
           />
         </div>
         <label
-          for="where"
+          htmlFor="where"
           className="block mb-2 text-sm font-medium text-white"
         >
           Where did you hear about us?
