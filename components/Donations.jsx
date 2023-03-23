@@ -4,8 +4,8 @@ import Link from "next/link";
 function Donations() {
   return (
     <div
-      className="w-[100%] mb-[2rem] bg-black text-white flex flex-col justify-center items-center pt-5
-    lg:mx-3 lg:w-[50%] "
+      className="w-[100%]  bg-black text-white flex flex-col justify-center items-center pt-5
+    lg:px-3 lg:w-[50%] "
     >
       <h1
         className="text-5xl font-bold mb-[3rem] text-center
@@ -56,7 +56,7 @@ function Donations() {
       </p>
       <p
         className=" text-center m-4
-        lg:my-5"
+        lg:py-5"
       >
         For in-kind donations or other collaboration ideas, please fill out our
         contact form.

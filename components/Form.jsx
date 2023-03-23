@@ -3,16 +3,11 @@ import React from "react";
 function Form() {
   return (
     <div
-      className="w-[100%] mb-[2rem] bg-black text-white flex flex-col justify-center items-center pt-5
-      lg:mx-3 lg:w-[50%] "
-
-      // w-[90%]
-      //     md:w-[75%]
-      //     lg:w-[45%]
-      //     lg:px-[2rem]"
+      className="w-[100%] bg-black text-white flex flex-col justify-center items-center pt-5
+      lg:px-3 lg:w-[50%] "
     >
       <h1
-        className="text-5xl font-bold mb-[3rem] text-center
+        className="text-5xl py-3 font-bold mb-[3rem] text-center
         md:text-5xl 
         lg:text-5xl"
       >
