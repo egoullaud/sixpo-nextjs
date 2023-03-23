@@ -6,6 +6,8 @@ import festivalPhoto from "../public/Delone-Kelsey.jpg";
 import Sponsors from "@/components/Sponsors";
 import Donations from "@/components/Donations";
 import Speakers from "@/components/Speakers";
+import Directions from "@/components/Directions";
+import Form from "@/components/Form";
 
 function events() {
   return (
@@ -40,7 +42,7 @@ function events() {
         >
           <Image
             priority
-            className=" 
+            className=" object-cover
                         md:h-full
                         lg:w-full lg:h-[80vh] "
             src={eventHero}
@@ -200,6 +202,15 @@ function events() {
             </button>
           </Link>
         </div>
+      </section>
+      {/* directions */}
+      <Directions />
+      <section
+        className="bg-black flex flex-col items-center justify-center py-[5rem]
+        lg:flex-row lg:items-start lg:px-4"
+      >
+        <Donations />
+        <Form />
       </section>
     </div>
   );
