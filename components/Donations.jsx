@@ -5,12 +5,12 @@ function Donations() {
   return (
     <div
       className="w-[100%] mb-[2rem] bg-black text-white flex flex-col justify-center items-center pt-5
-    lg:mx-3  lg:w-[50%] "
+    lg:mx-3 lg:w-[50%] "
     >
       <h1
         className="text-5xl font-bold mb-[3rem] text-center
                 md:text-5xl 
-                lg:text-7xl"
+                lg:text-5xl"
       >
         Support Us
       </h1>
@@ -36,7 +36,7 @@ function Donations() {
         target="_blank"
       >
         <button
-          className=" rounded-md py-2 px-4 my-[2rem] text-xl
+          className=" rounded-md py-3 px-4 my-[2rem] text-xl
           hover:bg-[#ff7070] hover:ease-in-out hover:duration-500
            bg-black w-[100%] border-2 border-[#F86E6E] 
            font-medium mx-auto  text-white"
