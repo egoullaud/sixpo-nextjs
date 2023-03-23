@@ -4,6 +4,9 @@ import community from "../public/community.jpg";
 import Link from "next/link";
 import Image from "next/image";
 import HomeCards from "@/components/HomeCards";
+import Sponsors from "@/components/Sponsors";
+import Donations from "@/components/Donations";
+import Form from "@/components/Form";
 
 function home() {
   return (
@@ -46,7 +49,7 @@ function home() {
           </div>
         </div>
       </section>
-
+      {/* about */}
       <section
         className="md:mx-[2rem] lg:mx-[3rem] lg:mt-[5rem] md:mt-[5rem]"
         id="sixpo-intro"
@@ -120,9 +123,20 @@ function home() {
           </section>
         </div>
       </section>
-
+      {/* home cards */}
       <section className=" bg-gradient-to-t from-[#bcf0ff] py-[5vh]">
         <HomeCards />
+      </section>
+      {/* <Sponsors /> */}
+
+      {/* contact and donations */}
+      <section
+        className="bg-black flex flex-col items-center justify-center py-[5rem]
+        lg:flex-row lg:items-start lg:px-4"
+      >
+        <Donations />
+
+        <Form />
       </section>
     </div>
   );
