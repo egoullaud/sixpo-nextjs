@@ -80,7 +80,6 @@ function blog({ posts }) {
               datePublished={post.datePublished}
               slug={post.slug}
               preview={post.preview}
-              // author={}
             />
           ))}
         </div>
