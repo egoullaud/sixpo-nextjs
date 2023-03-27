@@ -5,13 +5,43 @@ import community from "../public/community.jpg";
 import Link from "next/link";
 import Image from "next/image";
 import HomeCards from "@/components/HomeCards";
-import Sponsors from "@/components/Sponsors";
+import SponsorCard from "@/components/SponsorCard";
 import Donations from "@/components/Donations";
 import Form from "@/components/Form";
+import { GraphQLClient, gql } from "graphql-request";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+const hygraph = new GraphQLClient(`${process.env.HYGRAPH_URL}`);
+const SPONSORS_QUERY = gql`
+  {
+    sponsors {
+      resources {
+        id
+        slug
+        title
+        url
+        image {
+          url
+          altText
+        }
+        content {
+          html
+        }
+      }
+    }
+  }
+`;
+export async function getStaticProps() {
+  const { sponsors } = await hygraph.request(SPONSORS_QUERY);
+  return {
+    props: {
+      sponsors,
+    },
+  };
+}
+
+export default function Home({ sponsors }) {
   return (
     <>
       <Head>
@@ -142,7 +172,34 @@ export default function Home() {
           <section className=" bg-gradient-to-t from-[#bcf0ff] py-[5vh]">
             <HomeCards />
           </section>
-          {/* <Sponsors /> */}
+          {/* sponsors section */}
+          <div className="my-[2rem]">
+            <h1
+              className="font-bold m-4 text-center text-2xl
+      lg:text-4xl"
+            >
+              Our Partners & Sponsors
+            </h1>
+            {sponsors.map((sponsor) => (
+              <div
+                className="grid grid-cols-2 justify-center items-center gap-2 mx-4
+            md:grid-cols-5
+            "
+                key={sponsor.id}
+              >
+                {sponsor.resources?.map((resource) => (
+                  <div>
+                    <SponsorCard
+                      key={resource.id}
+                      url={resource.url}
+                      image={resource.image.url}
+                      image_alt={resource.image.alt}
+                    />
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
 
           {/* contact and donations */}
           <section
@@ -153,7 +210,6 @@ export default function Home() {
             <Form />
           </section>
         </div>
-        );
       </main>
     </>
   );
