@@ -1,6 +1,40 @@
 import React from "react";
+import ResourceCard from "@/components/ResourceCard";
+import { GraphQLClient, gql } from "graphql-request";
 
-function resources() {
+const hygraph = new GraphQLClient(`${process.env.HYGRAPH_URL}`);
+
+const QUERY = gql`
+  {
+    resources {
+      id
+      slug
+      title
+      url
+      category {
+        id
+        title
+      }
+      content {
+        html
+      }
+      image {
+        url
+      }
+    }
+  }
+`;
+
+export async function getStaticProps() {
+  const { resources } = await hygraph.request(QUERY);
+  return {
+    props: {
+      resources,
+    },
+  };
+}
+
+function resources({ resources }) {
   return (
     <div className="flex flex-col  bg-black bg-opacity-70 pb-[10rem]  ">
       <h1
@@ -12,9 +46,16 @@ function resources() {
       </h1>
       {/* <ResourceCategories /> */}
       <section className="flex flex-col ">
-        {/* {resources.map((resource) => (
-      <ResourceCard key={resource.id} resource={resource} />
-    ))} */}
+        {resources.map((resource) => (
+          <ResourceCard
+            key={resource.id}
+            image={resource.image.url}
+            image_alt={resource.image.altText}
+            title={resource.title}
+            url={resource.url}
+            content={resource.content.html}
+          />
+        ))}
       </section>
     </div>
   );
