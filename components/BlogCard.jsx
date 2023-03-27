@@ -2,7 +2,8 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import moment from "moment/moment";
-function BlogCard({
+
+export default function BlogPost({
   title,
   authors,
   image,
@@ -21,7 +22,7 @@ function BlogCard({
         <Link
           className="w-[100%] object-cover 
                     lg:w-[70%] xl:m-4"
-          href={"/blog/" + slug}
+          href={"/blog/posts/" + slug}
         >
           <img className="rounded mx-auto" src={image} alt={image_alt} />
         </Link>
@@ -45,7 +46,7 @@ function BlogCard({
           </h4>
           <p className="text-base mx-4 my-2">
             {preview}
-            <Link className="font-semibold mx-1" href={"/blog/" + slug}>
+            <Link className="font-semibold mx-1" href={"/blog/posts/" + slug}>
               <button className="underline hover:font-bold transition-all duration-700">
                 Read More
               </button>
@@ -56,5 +57,3 @@ function BlogCard({
     </div>
   );
 }
-
-export default BlogCard;
