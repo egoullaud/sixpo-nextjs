@@ -3,13 +3,61 @@ import Link from "next/link";
 import Image from "next/image";
 import eventHero from "../public/disabled-rep-flag.jpg";
 import festivalPhoto from "../public/Delone-Kelsey.jpg";
-import Sponsors from "@/components/Sponsors";
+import SponsorCard from "@/components/SponsorCard";
 import Donations from "@/components/Donations";
 import Speakers from "@/components/Speakers";
 import Directions from "@/components/Directions";
 import Form from "@/components/Form";
+import { GraphQLClient, gql } from "graphql-request";
 
-function events() {
+const hygraph = new GraphQLClient(`${process.env.HYGRAPH_URL}`);
+
+const SPEAKERS_QUERY = gql`
+  {
+    speakers {
+      id
+      name
+      url
+      description
+      image {
+        altText
+        url
+      }
+    }
+  }
+`;
+
+const SPONSORS_QUERY = gql`
+  {
+    sponsors {
+      resources {
+        id
+        slug
+        title
+        url
+        image {
+          url
+          altText
+        }
+        content {
+          html
+        }
+      }
+    }
+  }
+`;
+export async function getStaticProps() {
+  const { speakers } = await hygraph.request(SPEAKERS_QUERY);
+  const { sponsors } = await hygraph.request(SPONSORS_QUERY);
+  return {
+    props: {
+      speakers,
+      sponsors,
+    },
+  };
+}
+
+function events({ speakers, sponsors }) {
   return (
     <div>
       {/* hero */}
@@ -183,8 +231,57 @@ function events() {
             </li>
           </ul>
         </div>
+        {/* Speakers section */}
+        <div
+          className="flex flex-col items-start my-4
+                       lg:flex-row"
+        >
+          <h1
+            className="font-bold text-4xl mx-[2rem] mb-[2rem] text-center
+          lg:text-5xl"
+          >
+            Our Speakers
+          </h1>
 
-        <Speakers />
+          {speakers.map((speaker) => (
+            <Speakers
+              key={speaker.id}
+              name={speaker.name}
+              url={speaker.url}
+              description={speaker.description}
+              image_alt={speaker.image.altText}
+              image={speaker.image.url}
+            />
+          ))}
+        </div>
+        {/* sponsors section */}
+        <div className="my-[2rem]">
+          <h1
+            className="font-bold m-4 text-center text-2xl
+      lg:text-4xl"
+          >
+            Our Partners & Sponsors
+          </h1>
+          {sponsors.map((sponsor) => (
+            <div
+              className="grid grid-cols-2 justify-center items-center gap-2 mx-4
+            md:grid-cols-5
+            "
+              key={sponsor.id}
+            >
+              {sponsor.resources?.map((resource) => (
+                <div>
+                  <SponsorCard
+                    key={resource.id}
+                    url={resource.url}
+                    image={resource.image.url}
+                    image_alt={resource.image.alt}
+                  />
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
 
         <div className="w-[100%] flex items-center justify-center my-[3rem]">
           <Link
