@@ -1,6 +1,7 @@
 import React from "react";
 import { GraphQLClient, gql } from "graphql-request";
 import moment from "moment";
+import Link from "next/link";
 
 const hygraph = new GraphQLClient(`${process.env.HYGRAPH_URL}`);
 
@@ -68,12 +69,24 @@ export async function getStaticProps({ params }) {
 
 export default function BlogPost({ post }) {
   return (
-    <main
+    <div
       className="bg-black bg-opacity-70 flex flex-col justify-center items-center w-[100%]
                 py-[1rem] px-[1rem]
                 md:py-[3rem]
     "
     >
+      <Link href="/blog">
+        <button
+          className="
+              m-4 text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
+              py-2 px-4
+              md:py-2 md:px-4 
+              lg:px-8 lg:py-3 lg:text-lg 
+              hover:transition-all hover:duration-500 hover:bg-[#ff7070]"
+        >
+          Back to Blog
+        </button>
+      </Link>
       <section className="flex items-center justify-center">
         <div
           className="blog-page bg-white rounded shadow-md flex flex-col items-center justify-center 
@@ -144,6 +157,6 @@ export default function BlogPost({ post }) {
           </div>
         </div>
       </section>
-    </main>
+    </div>
   );
 }
