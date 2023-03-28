@@ -9,46 +9,15 @@ import Speakers from "@/components/Speakers";
 import Directions from "@/components/Directions";
 import Form from "@/components/Form";
 import { GraphQLClient, gql } from "graphql-request";
+import { SPEAKERS_QUERY, SPONSORS_QUERY } from "@/services";
 
-const hygraph = new GraphQLClient(`${process.env.HYGRAPH_URL}`);
-
-const SPEAKERS_QUERY = gql`
-  {
-    speakers {
-      id
-      name
-      url
-      description
-      image {
-        altText
-        url
-      }
-    }
-  }
-`;
-
-const SPONSORS_QUERY = gql`
-  {
-    sponsors {
-      resources {
-        id
-        slug
-        title
-        url
-        image {
-          url
-          altText
-        }
-        content {
-          html
-        }
-      }
-    }
-  }
-`;
 export async function getStaticProps() {
-  const { speakers } = await hygraph.request(SPEAKERS_QUERY);
-  const { sponsors } = await hygraph.request(SPONSORS_QUERY);
+  const { speakers } = await new GraphQLClient(
+    `${process.env.HYGRAPH_URL}`
+  ).request(SPEAKERS_QUERY);
+  const { sponsors } = await new GraphQLClient(
+    `${process.env.HYGRAPH_URL}`
+  ).request(SPONSORS_QUERY);
   return {
     props: {
       speakers,
@@ -232,27 +201,28 @@ function events({ speakers, sponsors }) {
           </ul>
         </div>
         {/* Speakers section */}
-        <div
-          className="flex flex-col items-start my-4
-                       lg:flex-row"
-        >
+        <div>
           <h1
             className="font-bold text-4xl mx-[2rem] mb-[2rem] text-center
           lg:text-5xl"
           >
             Our Speakers
           </h1>
-
-          {speakers.map((speaker) => (
-            <Speakers
-              key={speaker.id}
-              name={speaker.name}
-              url={speaker.url}
-              description={speaker.description}
-              image_alt={speaker.image.altText}
-              image={speaker.image.url}
-            />
-          ))}
+          <div
+            className="flex flex-col items-start my-4
+                       lg:flex-row"
+          >
+            {speakers.map((speaker) => (
+              <Speakers
+                key={speaker.id}
+                name={speaker.name}
+                url={speaker.url}
+                description={speaker.description}
+                image_alt={speaker.image.altText}
+                image={speaker.image.url}
+              />
+            ))}
+          </div>
         </div>
         {/* sponsors section */}
         <div className="my-[2rem]">
