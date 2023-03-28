@@ -1,31 +1,12 @@
 import React from "react";
 import ResourceCard from "@/components/ResourceCard";
 import { GraphQLClient, gql } from "graphql-request";
+import { RESOURCE_QUERY } from "@/services";
 
-const hygraph = new GraphQLClient(`${process.env.HYGRAPH_URL}`);
-
-const QUERY = gql`
-  {
-    resources {
-      id
-      slug
-      title
-      url
-      category {
-        title
-      }
-      content {
-        html
-      }
-      image {
-        url
-        altText
-      }
-    }
-  }
-`;
 export async function getStaticProps() {
-  const { resources } = await hygraph.request(QUERY);
+  const { resources } = await new GraphQLClient(
+    `${process.env.HYGRAPH_URL}`
+  ).request(RESOURCE_QUERY);
   return {
     props: {
       resources,
