@@ -116,3 +116,18 @@ export const SPONSORS_QUERY = gql`
     }
   }
 `;
+
+export const SPEAKERS_QUERY = gql`
+  {
+    speakers {
+      id
+      name
+      url
+      description
+      image {
+        altText
+        url
+      }
+    }
+  }
+`;
