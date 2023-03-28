@@ -49,7 +49,6 @@ function Donations() {
         className="font-bold pb-2 text-center mx-4
      lg:mt-6"
       >
-        {" "}
         Please include the word: "SIXPO" in the "Dedication" section at the
         bottom of the page before clicking "next" to make sure your contribution
         reaches us!
