@@ -2,54 +2,12 @@ import React from "react";
 import { GraphQLClient, gql } from "graphql-request";
 import moment from "moment";
 import Link from "next/link";
-
-const hygraph = new GraphQLClient(`${process.env.HYGRAPH_URL}`);
-
-const QUERY = gql`
-  query Post($slug: String!) {
-    post(where: { slug: $slug }) {
-      id
-      slug
-      title
-      content {
-        html
-      }
-      image {
-        url
-        altText
-      }
-      category {
-        id
-        slug
-        title
-      }
-      authors {
-        name
-        id
-        content {
-          html
-        }
-        image {
-          id
-          url
-          altText
-        }
-      }
-      datePublished
-    }
-  }
-`;
-
-const SLUGLIST = gql`
-  {
-    posts {
-      slug
-    }
-  }
-`;
+import { POST_BY_SLUG_QUERY, POST_SLUGLIST } from "@/services";
 
 export async function getStaticPaths() {
-  const { posts } = await hygraph.request(SLUGLIST);
+  const { posts } = await new GraphQLClient(
+    `${process.env.HYGRAPH_URL}`
+  ).request(POST_SLUGLIST);
   return {
     paths: posts.map((post) => ({ params: { slug: post.slug } })),
     fallback: false,
@@ -58,7 +16,10 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const slug = params.slug;
-  const data = await hygraph.request(QUERY, { slug });
+  const data = await new GraphQLClient(`${process.env.HYGRAPH_URL}`).request(
+    POST_BY_SLUG_QUERY,
+    { slug }
+  );
   const post = data.post;
   return {
     props: {
