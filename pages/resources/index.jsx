@@ -12,7 +12,6 @@ const QUERY = gql`
       title
       url
       category {
-        id
         title
       }
       content {
@@ -20,11 +19,11 @@ const QUERY = gql`
       }
       image {
         url
+        altText
       }
     }
   }
 `;
-
 export async function getStaticProps() {
   const { resources } = await hygraph.request(QUERY);
   return {
