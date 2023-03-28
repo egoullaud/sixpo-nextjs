@@ -1,44 +1,12 @@
 import BlogCard from "@/components/BlogCard";
 import React from "react";
-import { GraphQLClient, gql } from "graphql-request";
-
-const hygraph = new GraphQLClient(`${process.env.HYGRAPH_URL}`);
-
-const QUERY = gql`
-  {
-    posts {
-      id
-      slug
-      title
-      image {
-        url
-        altText
-      }
-      category {
-        id
-        slug
-        title
-      }
-      authors {
-        name
-        id
-        content {
-          html
-        }
-        image {
-          id
-          url
-          altText
-        }
-      }
-      datePublished
-      preview
-    }
-  }
-`;
+import { GraphQLClient } from "graphql-request";
+import { BLOG_QUERY } from "@/services";
 
 export async function getStaticProps() {
-  const { posts } = await hygraph.request(QUERY);
+  const { posts } = await new GraphQLClient(
+    `${process.env.HYGRAPH_URL}`
+  ).request(BLOG_QUERY);
   return {
     props: {
       posts,
