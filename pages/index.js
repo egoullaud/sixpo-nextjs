@@ -9,31 +9,14 @@ import SponsorCard from "@/components/SponsorCard";
 import Donations from "@/components/Donations";
 import Form from "@/components/Form";
 import { GraphQLClient, gql } from "graphql-request";
+import { SPONSORS_QUERY } from "@/services";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const hygraph = new GraphQLClient(`${process.env.HYGRAPH_URL}`);
-const SPONSORS_QUERY = gql`
-  {
-    sponsors {
-      resources {
-        id
-        slug
-        title
-        url
-        image {
-          url
-          altText
-        }
-        content {
-          html
-        }
-      }
-    }
-  }
-`;
 export async function getStaticProps() {
-  const { sponsors } = await hygraph.request(SPONSORS_QUERY);
+  const { sponsors } = await new GraphQLClient(
+    `${process.env.HYGRAPH_URL}`
+  ).request(SPONSORS_QUERY);
   return {
     props: {
       sponsors,
