@@ -1,5 +1,5 @@
 import React from "react";
-import { GraphQLClient, gql } from "graphql-request";
+import { GraphQLClient } from "graphql-request";
 import moment from "moment";
 import Link from "next/link";
 import { POST_BY_SLUG_QUERY, POST_SLUGLIST } from "@/services";
