@@ -1,20 +1,27 @@
 import React from "react";
 import ResourceCard from "@/components/ResourceCard";
-import { GraphQLClient, gql } from "graphql-request";
-import { RESOURCE_QUERY } from "@/services";
+import { GraphQLClient } from "graphql-request";
+import { RESOURCE_QUERY, RESOURCE_CATEGORY_QUERY } from "@/services";
+import ResourceCategory from "@/components/ResourceCategory";
 
 export async function getStaticProps() {
   const { resources } = await new GraphQLClient(
     `${process.env.HYGRAPH_URL}`
   ).request(RESOURCE_QUERY);
+  const { resourceCategories } = await new GraphQLClient(
+    `${process.env.HYGRAPH_URL}`
+  ).request(RESOURCE_CATEGORY_QUERY);
+
   return {
     props: {
       resources,
+      resourceCategories,
     },
   };
 }
 
-function resources({ resources }) {
+function resources({ resources, resourceCategories }) {
+  console.log(resourceCategories);
   return (
     <div className="flex flex-col  bg-black bg-opacity-70 pb-[10rem]  ">
       <h1
@@ -24,8 +31,19 @@ function resources({ resources }) {
       >
         Resources
       </h1>
-      {/* <ResourceCategories /> */}
-      <section className="flex flex-col ">
+
+      {/* CATEGORY BUTTONS */}
+      <div className="flex justify-center items-center">
+        {resourceCategories.map((resourceCategory) => (
+          <ResourceCategory
+            key={resourceCategory.id}
+            slug={resourceCategory.slug}
+            title={resourceCategory.title}
+          />
+        ))}
+      </div>
+      {/* ALL RESOURCES */}
+      <div className="flex flex-col ">
         {resources.map((resource) => (
           <ResourceCard
             key={resource.id}
@@ -36,7 +54,7 @@ function resources({ resources }) {
             content={resource.content.html}
           />
         ))}
-      </section>
+      </div>
     </div>
   );
 }
