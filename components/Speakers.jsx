@@ -11,7 +11,8 @@ function Speakers({ name, url, description, image_alt, image }) {
           <img
             className="rounded w-[90%]
             md:w-[50%]
-            lg:w-[100%] lg:max-h-64 lg:object-cover lg:object-top"
+            lg:w-[100%] lg:max-h-64 lg:object-cover lg:object-top
+            xl:max-h-96 "
             src={image}
             alt={image_alt}
           />
