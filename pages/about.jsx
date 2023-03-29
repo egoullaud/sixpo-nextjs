@@ -100,7 +100,7 @@ function about({ sponsors }) {
           </div>
         </div>
       </section>
-
+      {/* Join the event section */}
       <section>
         {/* top paragraph */}
         <div className="flex flex-col justify-center items-center my-[2rem] md:mt-[5rem]">
@@ -133,69 +133,67 @@ function about({ sponsors }) {
             </button>
           </Link>
         </div>
-
-        {/* who is sixpo? */}
+      </section>
+      {/* who is sixpo? */}
+      <section className="md:my-[5rem]">
         <div
-          className="flex items-center justify-center
-                    w-[100%]
-                    md:w-[95%] md:flex-row md:pt-[3rem]
-                    lg:m-[4rem] md:m-[1rem] lg:pt-[5rem] "
+          className="flex flex-col items-center justify-center
+                    w-[100%] 
+                    md:w-[100%] md:flex-row 
+                    xl:h-[50rem] xl:overflow-hidden
+                    "
         >
-          <div
-            className="flex flex-col  items-center justify-center 
-              md:flex-row"
-          >
-            <Image
-              className="rounded-md w-[80%] m-[2rem]
-                  md:w-[40%] md:m-[2rem]
+          <Image
+            className=" w-[80%] 
+                  md:w-[50%]   
+                          
                           "
-              src={coupleSmile}
-              alt="A disabled man and woman sitting on a blanket in the grass smiling, 
+            src={coupleSmile}
+            alt="A disabled man and woman sitting on a blanket in the grass smiling, 
                           holding hands and leaning their heads to touch together. The Black woman wears a read patterend headband, 
                           dark green jacket and flower-printed skirt. The man wears a red shirt with the letter H printed in dark blue."
-            />
+          />
 
-            <div>
-              <div className="flex flex-col items-center">
-                <h3
-                  className="my-4 font-bold px-4
-                   text-xl
-                   md:text-xl
+          <div className="flex flex-col items-center">
+            <h3
+              className=" font-bold  my-[2rem]
+                   text-2xl
+                   md:text-3xl md:mb-[3rem]
                    lg:text-4xl"
-                >
-                  Who is Sixpo for?
-                </h3>
-                <p
-                  className=" text-left px-4 mb-[1rem]
-                md:text-lg
-                lg:text-xl"
-                >
-                  SIXpo is for folks who want to learn more about sexuality and
-                  especially for folks with lived experience of disability and
-                  their support. Whether you have never gone on a date, or you
-                  feel like you are a sexual expert, SIXpo is for you! Wherever
-                  you are in your relationship to sexuality, that is where you
-                  are supposed to be. We can all learn and explore a little more
-                  about sexuality, so come join!
-                </p>
-              </div>
-            </div>
+            >
+              Who is Sixpo for?
+            </h3>
+            <p
+              className="text-left px-4 mb-[2rem] 
+                md:text-lg md:mx-auto
+                lg:text-xl
+                xl:text-2xl xl:px-[5rem]"
+            >
+              SIXpo is for folks who want to learn more about sexuality and
+              especially for folks with lived experience of disability and their
+              support. Whether you have never gone on a date, or you feel like
+              you are a sexual expert, SIXpo is for you! Wherever you are in
+              your relationship to sexuality, that is where you are supposed to
+              be. We can all learn and explore a little more about sexuality, so
+              come join!
+            </p>
           </div>
         </div>
         {/* who is behind */}
         <div
           className="flex items-center justify-center
                     w-[100%]
-                    md:w-[95%] md:flex-row md:pt-[3rem]
-                    lg:m-[4rem] md:m-[1rem] lg:pt-[5rem] "
+                    md:w-[100%] md:flex-row
+                    xl:h-[50rem] xl:overflow-hidden "
         >
           <div
             className="flex flex-col  items-center justify-center 
-              md:flex-row"
+              md:flex-row-reverse"
           >
             <Image
-              className="rounded-md w-[80%] m-[2rem]
-                  md:w-[40%] md:m-[2rem]
+              className="w-[80%] 
+            md:w-[50%] 
+            
                           "
               src={handHold}
               alt="Close up of disabled couple holding hands with interlaced fingers. A Black woman wears a floral printed skirt, 
@@ -205,17 +203,18 @@ function about({ sponsors }) {
             <div>
               <div className="flex flex-col items-center justify-center">
                 <h3
-                  className="my-4 font-bold px-4
-                   text-xl
-                   md:text-xl
-                   lg:text-4xl"
+                  className="font-bold  my-[2rem]
+                text-2xl
+                md:text-3xl md:mb-[3rem]
+                lg:text-4xl"
                 >
                   Who is behind Sixpo?
                 </h3>
                 <p
-                  className=" text-left px-4 mb-[1rem]
-                      md:text-lg
-                      lg:text-xl"
+                  className="text-left px-4 mb-[2rem] 
+                md:text-lg md:mx-auto
+                lg:text-xl
+                xl:text-2xl xl:px-[5rem]"
                 >
                   SIXPO is the product of a lot of hard work by a bold, growing
                   group of advocates, people working in the disability support
@@ -229,35 +228,40 @@ function about({ sponsors }) {
             </div>
           </div>
         </div>
-        {/* sponsors section */}
-        <div className="my-[2rem]">
-          <h1
-            className="font-bold m-4 text-center text-2xl
-      lg:text-4xl"
-          >
-            Our Partners & Sponsors
-          </h1>
-          {sponsors.map((sponsor) => (
-            <div
-              className="grid grid-cols-2 justify-center items-center gap-2 mx-4
+      </section>
+
+      {/* sponsors section */}
+      <div className="my-[2rem]">
+        <h1
+          className="font-bold m-4 text-center text-2xl
+          md:text-3xl
+          lg:text-4xl lg:my-[6rem] 
+          xl:text-5xl
+          "
+        >
+          Our Partners & Sponsors
+        </h1>
+        {sponsors.map((sponsor) => (
+          <div
+            className="grid grid-cols-2 justify-center items-center gap-2 mx-4
             md:grid-cols-5
             "
-              key={sponsor.id}
-            >
-              {sponsor.resources?.map((resource) => (
-                <div>
-                  <SponsorCard
-                    key={resource.id}
-                    url={resource.url}
-                    image={resource.image.url}
-                    image_alt={resource.image.alt}
-                  />
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-      </section>
+            key={sponsor.id}
+          >
+            {sponsor.resources?.map((resource) => (
+              <div>
+                <SponsorCard
+                  key={resource.id}
+                  url={resource.url}
+                  image={resource.image.url}
+                  image_alt={resource.image.alt}
+                />
+              </div>
+            ))}
+          </div>
+        ))}
+      </div>
+
       <section
         className="bg-black flex flex-col items-center justify-center py-[5rem]
         lg:flex-row lg:items-start lg:px-4"
