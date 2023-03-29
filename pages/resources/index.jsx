@@ -33,7 +33,7 @@ function resources({ resources, resourceCategories }) {
       </h1>
 
       {/* CATEGORY BUTTONS */}
-      <div className="flex justify-center items-center">
+      {/* <div className="flex justify-center items-center">
         {resourceCategories.map((resourceCategory) => (
           <ResourceCategory
             key={resourceCategory.id}
@@ -41,7 +41,7 @@ function resources({ resources, resourceCategories }) {
             title={resourceCategory.title}
           />
         ))}
-      </div>
+      </div> */}
       {/* ALL RESOURCES */}
       <div className="flex flex-col ">
         {resources.map((resource) => (
