@@ -175,3 +175,19 @@ export const RESOURCE_BY_CATEGORY_SLUG = gql`
     }
   }
 `;
+
+export const SCHEDULE_QUERY = gql`
+  {
+    schedules {
+      title
+      id
+      eventDate
+      active
+      briefDescription
+      zoomLink
+      description {
+        html
+      }
+    }
+  }
+`;
