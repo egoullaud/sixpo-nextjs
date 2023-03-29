@@ -84,7 +84,9 @@ export const RESOURCE_QUERY = gql`
       title
       url
       category {
+        slug
         title
+        id
       }
       content {
         html
@@ -127,6 +129,48 @@ export const SPEAKERS_QUERY = gql`
       image {
         altText
         url
+      }
+    }
+  }
+`;
+
+export const RESOURCE_CATEGORY_QUERY = gql`
+  {
+    resourceCategories {
+      slug
+      title
+      id
+    }
+  }
+`;
+
+export const RESOURCE_SLUGLIST = gql`
+  {
+    resources {
+      category {
+        slug
+      }
+    }
+  }
+`;
+export const RESOURCE_BY_CATEGORY_SLUG = gql`
+  {
+    resources(where: { category_some: { slug_contains: $slug } }) {
+      title
+      id
+      slug
+      url
+      image {
+        altText
+        url
+      }
+      content {
+        html
+      }
+      category {
+        slug
+        title
+        id
       }
     }
   }
