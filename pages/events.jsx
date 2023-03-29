@@ -72,17 +72,20 @@ function events({ speakers, sponsors }) {
       {/* event details */}
       <section
         className="flex flex-col bg-white 
-                md:my-[4rem]"
+                md:my-[4rem]
+                "
       >
         <div
           className=" flex justify-evenly 
                 flex-col
-                md:items-center md:flex-row"
+                md:items-start md:flex-row
+                xl:h-[60rem] xl:overflow-hidden"
         >
           <div
-            className="flex flex-col  
+            className="flex flex-col  justify-center
                 md:w-[60%]
-                lg:w-[50%]"
+                lg:w-[50%]
+                xl:mt-[10rem]"
           >
             <h2
               className="font-bold  m-[2rem] 
@@ -121,178 +124,176 @@ function events({ speakers, sponsors }) {
               want to be as prepared to welcome as many of you as possible, and
               this means that signing up ahead of time will help us out a lot.
             </p>
-            <div className="flex justify-center mb-[3rem]">
-              {/* <Link to='/about'> <button className=' text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
-                      py-2 px-2
-                      md:py-2 md:px-4 
-                      lg:px-8 lg:py-3 lg:text-lg 
-                      hover:transition-all hover:duration-500 hover:bg-[#ff7070]'>Learn More</button></Link> */}
-              <Link
-                href="https://www.eventbrite.ca/e/sixpo-festival-tickets-530930426197"
-                target="_blank"
-              >
-                <button
-                  className="
-                      text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
-                      py-2 px-4
-                      md:py-2 md:px-4 md:mx-10
-                      lg:px-8 lg:py-3 lg:text-lg 
-                      hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
-                >
-                  Register with Eventbrite
-                </button>
-              </Link>
-              <Link
-                href="https://drive.google.com/file/d/1r2w7SIpCMMroNstVRL-e903itOeIcWCe/view?usp=sharing"
-                target="_blank"
-              >
-                <button
-                  className="
-                      text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
-                      py-2 px-4
-                      md:py-2 md:px-4 md:mx-10
-                      lg:px-8 lg:py-3 lg:text-lg 
-                      hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
-                >
-                  Event Program (PDF)
-                </button>
-              </Link>
-            </div>
-            <div className="flex justify-center items-center">
-              <Link href="/schedule">
-                <button
-                  className="
-                      text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
-                      py-2 px-4
-                      md:py-2 md:px-4 md:mx-10
-                      lg:px-8 lg:py-3 lg:text-lg 
-                      hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
-                >
-                  Event Schedule
-                </button>
-              </Link>
-            </div>
           </div>
           <div
-            className="flex flex-col items-center justify-evenly 
-                      md:w-[45%] md:items-start md:flex-row
-                      lg:w-[50%]"
+            className="flex flex-col items-center
+                      md:w-[50%]  md:flex-row md:mt-[7rem]                     "
           >
             <Image
-              className="rounded-md  
-                      m-4
+              className="  
                       w-[90%]
                       md:w-[100%] 
-                      lg:w-[80%] lg:m-[3rem]"
+                       "
               src={festivalPhoto}
               alt="A man hugs his fiance while she smiles and tugs the bill of his hat."
             />
           </div>
         </div>
-      </section>
-      {/* what to expect */}
-      <section>
-        <div className="mb-[3rem]">
-          <h3
-            className="font-bold text-4xl my-[2rem] mx-[2rem]
-          lg:text-5xl"
-          >
-            What to Expect
-          </h3>
-          <p className=" mx-[2rem] my-[1rem] text-xl">
-            You can expect a variety of vendors, presentations and workshops
-            from a wide variety of organizations, experts and advocates!{" "}
-          </p>
-          <ul
-            className=" list-decimal mx-[2.5rem]
-                      md:mx-[4rem]"
-          >
-            <li className="my-2">
-              Week one will focus on the basics, introductory workshops,
-              participants will have time to reflect on where they are at with
-              their relationship to sexuality and maybe a chance to meet others
-              who are attending SIXpo.{" "}
-            </li>
-            <li className="my-2">
-              Week two will dig deeper into topics of sexual health, sexual
-              identity, consent, and self pleasure!{" "}
-            </li>
-            <li className="my-2">
-              Week three will be concluding discussions, summary workshops and
-              celebrating what we’ve all learned!{" "}
-            </li>
-          </ul>
-        </div>
-        {/* Speakers section */}
-        <div>
-          <h1
-            className="font-bold text-4xl mx-[2rem] mb-[2rem] text-center
-          lg:text-5xl"
-          >
-            Our Speakers
-          </h1>
-          <div
-            className="flex flex-col items-start my-4
-                       lg:flex-row"
-          >
-            {speakers.map((speaker) => (
-              <Speakers
-                key={speaker.id}
-                name={speaker.name}
-                url={speaker.url}
-                description={speaker.description}
-                image_alt={speaker.image.altText}
-                image={speaker.image.url}
-              />
-            ))}
-          </div>
-        </div>
-        {/* sponsors section */}
-        <div className="my-[2rem]">
-          <h1
-            className="font-bold m-4 text-center text-2xl
-      lg:text-4xl"
-          >
-            Our Partners & Sponsors
-          </h1>
-          {sponsors.map((sponsor) => (
-            <div
-              className="grid grid-cols-2 justify-center items-center gap-2 mx-4
-            md:grid-cols-5
-            "
-              key={sponsor.id}
-            >
-              {sponsor.resources?.map((resource) => (
-                <div>
-                  <SponsorCard
-                    key={resource.id}
-                    url={resource.url}
-                    image={resource.image.url}
-                    image_alt={resource.image.alt}
-                  />
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
 
-        <div className="w-[100%] flex items-center justify-center my-[3rem]">
+        {/* CTA BUTTONS */}
+        <div
+          className="flex flex-col items-center justify-center my-[1rem]
+                      md:flex-row
+                      xl:mt-[3rem]
+        "
+        >
           <Link
             href="https://www.eventbrite.ca/e/sixpo-festival-tickets-530930426197"
             target="_blank"
           >
             <button
               className="
-                        text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg py-2 px-4
-                        md:py-2 md:px-4 md:mx-10
-                        lg:px-8 lg:py-3 lg:text-lg 
-                        hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
+                      text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
+                      py-2 px-4 mx-1 mb-4
+                      md:py-2 md:px-4 md:mx-5
+                      lg:px-8 lg:py-3 lg:text-lg lg:mx-5
+                      hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
             >
               Register with Eventbrite
             </button>
           </Link>
+          <Link
+            href="https://drive.google.com/file/d/1r2w7SIpCMMroNstVRL-e903itOeIcWCe/view?usp=sharing"
+            target="_blank"
+          >
+            <button
+              className="
+                      text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
+                      py-2 px-4 mx-1 mb-4
+                      md:py-2 md:px-4 md:mx-1
+                      lg:px-8 lg:py-3 lg:text-lg lg:mx-2
+                      hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
+            >
+              Event Program (PDF)
+            </button>
+          </Link>
+          <Link href="/schedule">
+            <button
+              className="
+                      text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
+                      py-2 px-4 mb-4 
+                      md:py-2 md:px-4 md:mx-5
+                      lg:px-8 lg:py-3 lg:text-lg 
+                      hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
+            >
+              Event Schedule
+            </button>
+          </Link>
         </div>
       </section>
+      {/* what to expect */}
+
+      <section className="mb-[3rem]">
+        <h3
+          className="font-bold text-4xl mb-[3rem] mx-[2rem]
+          lg:text-5xl"
+        >
+          What to Expect
+        </h3>
+        <p className=" mx-[2rem] my-[1rem] text-xl">
+          You can expect a variety of vendors, presentations and workshops from
+          a wide variety of organizations, experts and advocates!{" "}
+        </p>
+        <ul
+          className=" list-decimal mx-[2.5rem]
+                      md:mx-[4rem]"
+        >
+          <li className="my-2">
+            Week one will focus on the basics, introductory workshops,
+            participants will have time to reflect on where they are at with
+            their relationship to sexuality and maybe a chance to meet others
+            who are attending SIXpo.{" "}
+          </li>
+          <li className="my-2">
+            Week two will dig deeper into topics of sexual health, sexual
+            identity, consent, and self pleasure!{" "}
+          </li>
+          <li className="my-2">
+            Week three will be concluding discussions, summary workshops and
+            celebrating what we’ve all learned!{" "}
+          </li>
+        </ul>
+      </section>
+      {/* Speakers section */}
+      <section>
+        <h1
+          className="font-bold text-4xl mx-[2rem] mb-[2rem] text-center
+          lg:text-5xl"
+        >
+          Our Speakers
+        </h1>
+        <div
+          className="flex flex-col items-start my-4
+                       lg:flex-row"
+        >
+          {speakers.map((speaker) => (
+            <Speakers
+              key={speaker.id}
+              name={speaker.name}
+              url={speaker.url}
+              description={speaker.description}
+              image_alt={speaker.image.altText}
+              image={speaker.image.url}
+            />
+          ))}
+        </div>
+      </section>
+      {/* sponsors section */}
+      <section className="my-[2rem]">
+        <h1
+          className="font-bold m-4 text-center text-2xl
+      lg:text-4xl"
+        >
+          Our Partners & Sponsors
+        </h1>
+        {sponsors.map((sponsor) => (
+          <div
+            className="grid grid-cols-2 justify-center items-center gap-2 mx-4
+            md:grid-cols-5
+            "
+            key={sponsor.id}
+          >
+            {sponsor.resources?.map((resource) => (
+              <div>
+                <SponsorCard
+                  key={resource.id}
+                  url={resource.url}
+                  image={resource.image.url}
+                  image_alt={resource.image.alt}
+                />
+              </div>
+            ))}
+          </div>
+        ))}
+      </section>
+
+      <div className="w-[100%] flex items-center justify-center my-[3rem]">
+        <Link
+          href="https://www.eventbrite.ca/e/sixpo-festival-tickets-530930426197"
+          target="_blank"
+        >
+          <button
+            className="
+                        text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg py-2 px-4
+                        md:py-2 md:px-4 md:mx-10
+                        lg:px-8 lg:py-3 lg:text-lg 
+                        hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
+          >
+            Register with Eventbrite
+          </button>
+        </Link>
+      </div>
+
       {/* directions */}
       <Directions />
       <section
