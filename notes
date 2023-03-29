@@ -1,0 +1,13 @@
+resource category problem
+
+- tried:
+  dynamic routing like with the blog posts
+
+- next idea:
+  filter()
+  Logic: When resource category button is clicked, resources in category appear
+
+1.  click button
+2.  filter through resources by category
+
+possibility: resources.filter(resource => resource.categories.some(category.slug === "crisis"))
