@@ -14,8 +14,8 @@ function Form() {
         Contact Us
       </h1>
       <form
-        // action="https://formsubmit.co/96314122bac3ce02edae763bc47fe7e0"
-        // method="POST"
+        action="https://formsubmit.co/sixpowebadmn@gmail.com"
+        method="POST"
         className="space-y-2 py-5 w-[90%]
         md:w-[70%]
         lg:w-[75%]"
