@@ -14,14 +14,14 @@ function Form() {
         Contact Us
       </h1>
       <form
-        action="https://formsubmit.co/sixpowebadmn@gmail.com"
+        action="https://formsubmit.co/96314122bac3ce02edae763bc47fe7e0"
         method="POST"
         className="space-y-2 py-5 w-[90%]
         md:w-[70%]
         lg:w-[75%]"
       >
-        {/* <input type="text" name="_honey" className="hidden" />
-          <input type="hidden" name="_captcha" value="false" /> */}
+        <input type="text" name="_honey" className="hidden" />
+        <input type="hidden" name="_captcha" value="false" />
         <div>
           <label
             htmlFor="name"
