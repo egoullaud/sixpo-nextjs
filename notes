@@ -11,3 +11,56 @@ resource category problem
 2.  filter through resources by category
 
 possibility: resources.filter(resource => resource.categories.some(category.slug === "crisis"))
+
+const sortCrisis = () => {
+
+    resources.filter(resource => resource.categories.some(category.slug === "crisis"))
+
+}
+
+const sortEducational = () => {
+resources.filter(resource => resource.categories.some(category.slug === "educational"))
+}
+
+https://daily-dev-tips.com/posts/next-portfolio-filter-by-category/
+
+export async function getStaticPaths() {
+const resources = getAllResources();
+const categories = new Set(resources.flatMap((resource) => resource.categories));
+
+return {
+paths: [...categories].map((category) => {
+return {
+params: {
+category,
+},
+};
+}),
+fallback: false,
+};
+}
+
+export async function getStaticProps({ params: { category } }) {
+const posts = getAllResourcesByCategory({ category });
+
+return {
+props: {
+resources,
+category,
+},
+};
+}
+
+export function getAllResourcesByCategory({ category }) {
+const resources = getAllResources();
+return resources.filter((resource) => resource.categories.includes(category));
+}
+
+export default function Resource({ resources, category }) {
+return ( <div>
+
+{resources.map((resource) => (
+
+<Article key={resource.slug} className='border-b-2' resource={resource} />
+))}</div>
+)}
