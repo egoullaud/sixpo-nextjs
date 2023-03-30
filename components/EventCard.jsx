@@ -9,7 +9,7 @@ function EventCard({ title, briefDescription, startDate, endTime, zoomLink }) {
        
     lg:flex-row"
     >
-      <div className="flex flex-col justify-center items-center text-center py-4 w-[90%]">
+      <div className="flex flex-col justify-center items-center text-center py-4 w-[100%]">
         <h3
           className="w-[95%] font-bold mb-4
                         md:text-xl lg:mt-6 lg:text-2xl"
