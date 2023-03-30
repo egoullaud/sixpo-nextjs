@@ -76,29 +76,6 @@ export const POST_SLUGLIST = gql`
   }
 `;
 
-export const RESOURCE_QUERY = gql`
-  {
-    resources {
-      id
-      slug
-      title
-      url
-      category {
-        slug
-        title
-        id
-      }
-      content {
-        html
-      }
-      image {
-        url
-        altText
-      }
-    }
-  }
-`;
-
 export const SPONSORS_QUERY = gql`
   {
     sponsors {
@@ -134,48 +111,6 @@ export const SPEAKERS_QUERY = gql`
   }
 `;
 
-export const RESOURCE_CATEGORY_QUERY = gql`
-  {
-    resourceCategories {
-      slug
-      title
-      id
-    }
-  }
-`;
-
-export const RESOURCE_SLUGLIST = gql`
-  {
-    resources {
-      category {
-        slug
-      }
-    }
-  }
-`;
-export const RESOURCE_BY_CATEGORY_SLUG = gql`
-  {
-    resources(where: { category_some: { slug_contains: $slug } }) {
-      title
-      id
-      slug
-      url
-      image {
-        altText
-        url
-      }
-      content {
-        html
-      }
-      category {
-        slug
-        title
-        id
-      }
-    }
-  }
-`;
-
 export const SCHEDULE_QUERY = gql`
   {
     schedules {
@@ -187,6 +122,65 @@ export const SCHEDULE_QUERY = gql`
       zoomLink
       description {
         html
+      }
+    }
+  }
+`;
+
+export const ALL_RESOURCES_QUERY = gql`
+  query ALL_RESOURCES_QUERY {
+    resources {
+      id
+      title
+      url
+      category {
+        title
+      }
+      content {
+        html
+      }
+      image {
+        altText
+        url
+      }
+    }
+  }
+`;
+
+export const RESOURCE_BY_CATEGORY_QUERY = gql`
+  query RESOURCE_BY_CATEGORY_QUERY($slug: String!) {
+    resources(where: { category_some: { slug: $slug } }) {
+      id
+      title
+      url
+      content {
+        html
+      }
+      image {
+        altText
+        url
+      }
+    }
+  }
+`;
+
+export const RESOURCE_CATEGORIES_QUERY = gql`
+  query RESOURCE_CATEGORIES_QUERY {
+    resourceCategories {
+      id
+      title
+      slug
+      resources {
+        content {
+          html
+        }
+        id
+        image {
+          altText
+          url
+        }
+        title
+        url
       }
     }
   }
