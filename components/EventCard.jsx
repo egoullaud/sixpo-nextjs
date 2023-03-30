@@ -5,22 +5,29 @@ import moment from "moment";
 function EventCard({
   title,
   briefDescription,
-  description,
-  eventDate,
+
+  startDate,
+  endTime,
   zoomLink,
-  active,
 }) {
   return (
-    <div className="w-[90%] mb-4 bg-white rounded shadow-md flex flex-col items-center justify-center lg:flex-row">
-      <div className="flex flex-col text-center mr-4 mb-4 w-[90%] md:text-left">
+    <div
+      className=" bg-white rounded shadow-md flex flex-col items-start justify-center 
+       
+    lg:flex-row"
+    >
+      <div className="flex flex-col justify-center items-center text-center py-4 w-[90%]">
         <h3
-          className="w-[90%] font-bold mx-4 mt-2 
+          className="w-[95%] font-bold mb-4
                         md:text-xl lg:mt-6 lg:text-2xl"
         >
           {title}
         </h3>
-        <h4>{moment(eventDate).format("MMMM DD, YYYY HH:MM")}</h4>
-        <p className="text-base mx-4 my-2">{briefDescription} </p>
+        <h4>
+          {moment(startDate).format("MMMM DD, YYYY HH:MM")} -{" "}
+          {moment(endTime).format("HH:MM")}
+        </h4>
+        <p className="text-base mt-2 mb-4">Speaker: {briefDescription} </p>
 
         <Link href={zoomLink} target="_blank">
           <button
