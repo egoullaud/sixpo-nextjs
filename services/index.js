@@ -114,12 +114,14 @@ export const SPEAKERS_QUERY = gql`
 export const SCHEDULE_QUERY = gql`
   {
     schedules {
-      title
       id
-      eventDate
+      title
       active
       briefDescription
       zoomLink
+      isLiveEvent
+      startDate
+      endTime
       description {
         html
       }
