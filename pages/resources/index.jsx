@@ -1,17 +1,16 @@
 import React from "react";
 import ResourceCard from "@/components/ResourceCard";
 import { GraphQLClient } from "graphql-request";
-import { RESOURCE_QUERY, RESOURCE_CATEGORY_QUERY } from "@/services";
-import ResourceCategory from "@/components/ResourceCategory";
+import { ALL_RESOURCES_QUERY, RESOURCE_CATEGORIES_QUERY } from "@/services";
+import Link from "next/link";
+
+const hygraph = new GraphQLClient(`${process.env.HYGRAPH_URL}`);
 
 export async function getStaticProps() {
-  const { resources } = await new GraphQLClient(
-    `${process.env.HYGRAPH_URL}`
-  ).request(RESOURCE_QUERY);
-  const { resourceCategories } = await new GraphQLClient(
-    `${process.env.HYGRAPH_URL}`
-  ).request(RESOURCE_CATEGORY_QUERY);
-
+  const { resources } = await hygraph.request(ALL_RESOURCES_QUERY);
+  const { resourceCategories } = await hygraph.request(
+    RESOURCE_CATEGORIES_QUERY
+  );
   return {
     props: {
       resources,
@@ -21,7 +20,6 @@ export async function getStaticProps() {
 }
 
 function resources({ resources, resourceCategories }) {
-  console.log(resourceCategories);
   return (
     <div className="flex flex-col  bg-black bg-opacity-70 pb-[10rem]  ">
       <h1
@@ -29,19 +27,24 @@ function resources({ resources, resourceCategories }) {
              md:text-5xl md:mt-[5rem] md:mb-[1rem]
              lg:text-7xl lg:mt-[7rem] lg:mb-[3rem]"
       >
-        Resources
+        All Resources
       </h1>
 
       {/* CATEGORY BUTTONS */}
-      {/* <div className="flex justify-center items-center">
+      <div className="flex justify-center my-[1rem] ">
         {resourceCategories.map((resourceCategory) => (
-          <ResourceCategory
-            key={resourceCategory.id}
-            slug={resourceCategory.slug}
-            title={resourceCategory.title}
-          />
+          <Link href={"/resources/" + resourceCategory.slug}>
+            <button
+              key={resourceCategory.id}
+              className="py-2 px-2 text-white bg-black bg-opacity-60 focus:bg-white focus:text-black focus:font-bold
+         md:text-xl md:px-4 md:py-3
+         lg:text-2xl lg:px-4 lg:py-3"
+            >
+              {resourceCategory.title}
+            </button>
+          </Link>
         ))}
-      </div> */}
+      </div>
       {/* ALL RESOURCES */}
       <div className="flex flex-col ">
         {resources.map((resource) => (
