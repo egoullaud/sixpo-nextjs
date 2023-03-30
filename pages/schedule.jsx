@@ -19,8 +19,8 @@ function schedule({ schedules }) {
   return (
     <div className="flex flex-col  bg-black bg-opacity-70 pb-[10rem] ">
       <h1
-        className="font-bold w-[100%] text-white text-center mt-[1rem] text-5xl
-         md:text-5xl md:mt-[5rem] md:mb-[1rem]
+        className="font-bold w-[100%] text-white text-center mt-[1rem] py-[1rem] text-5xl
+         md:text-5xl md:mt-[5rem] md:mb-[1rem] 
          lg:text-7xl lg:mt-[7rem] lg:mb-[3rem]"
       >
         Event Schedule
@@ -54,7 +54,7 @@ function schedule({ schedules }) {
 
       {/*   flex flex-col justify-center items-center */}
       <div
-        className="grid mx-4
+        className="grid mx-4 gap-3
         md:grid-cols-2 md:gap-4
         lg:grid-cols-3
         xl:grid-cols-4
