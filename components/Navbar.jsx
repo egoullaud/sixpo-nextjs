@@ -58,6 +58,18 @@ function Navbar() {
             </a>
           </Link>
         </li>
+        <li>
+          <Link href="/schedule" legacyBehavior>
+            <a
+              className="xl:mx-[1rem]
+                lg:mx-[4rem] 
+                md:mx-[2rem] 
+                hover:transition-all hover:duration-500 hover:underline hover:text-[#ffef91]"
+            >
+              Schedule
+            </a>
+          </Link>
+        </li>
         <li className="lg:w-[11%] md:w-[15%]">
           <Link href="/home">
             <Image
@@ -125,6 +137,9 @@ function Navbar() {
           </li>
           <li className="my-1 p-2 w-[100%]  hover:ease-in-out hover:duration-500 hover:underline hover:text-[#ffef91]">
             <Link href="/events">Events</Link>
+          </li>
+          <li className="my-1 p-2 w-[100%]  hover:ease-in-out hover:duration-500 hover:underline hover:text-[#ffef91]">
+            <Link href="/schedule">Schedule</Link>
           </li>
           <li className="my-1 p-2 w-[100%]  hover:ease-in-out hover:duration-500 hover:underline hover:text-[#ffef91]">
             <Link href="/blog">Our Blog</Link>
