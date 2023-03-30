@@ -17,8 +17,8 @@ function EventCard({ title, briefDescription, startDate, endTime, zoomLink }) {
           {title}
         </h3>
         <h4>
-          {moment(startDate).format("MMMM DD, YYYY HH:MM")} -{" "}
-          {moment(endTime).format("HH:MM")}
+          {moment(startDate).format("MMMM DD, YYYY HH:mm")} -{" "}
+          {moment(endTime).format("HH:mm")}
         </h4>
         <p className="text-base mt-2 mb-4">Speaker: {briefDescription} </p>
 
