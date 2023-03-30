@@ -2,14 +2,7 @@ import React from "react";
 import Link from "next/link";
 import moment from "moment";
 
-function EventCard({
-  title,
-  briefDescription,
-
-  startDate,
-  endTime,
-  zoomLink,
-}) {
+function EventCard({ title, briefDescription, startDate, endTime, zoomLink }) {
   return (
     <div
       className=" bg-white rounded shadow-md flex flex-col items-start justify-center 
@@ -29,7 +22,7 @@ function EventCard({
         </h4>
         <p className="text-base mt-2 mb-4">Speaker: {briefDescription} </p>
 
-        <Link href={zoomLink} target="_blank">
+        {/* <Link href={zoomLink} target="_blank">
           <button
             className="text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg py-2 px-4
                             md:py-2 md:px-4 md:mx-10
@@ -38,7 +31,7 @@ function EventCard({
           >
             Zoom Link
           </button>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
