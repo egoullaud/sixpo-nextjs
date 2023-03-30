@@ -1,0 +1,183 @@
+Sure, here's an example of how to filter resources by category title using next.js, react, graphql-request, and the RESOURCE_BY_CATEGORY query:
+
+1. Import the GraphQLClient class from graphql-request and create a client instance:
+
+import { GraphQLClient } from'graphql-request'; 
+const graphQLClient = new GraphQLClient(process.env.GRAPHQL_ENDPOINT);
+
+- You'll need to replace process.env.GRAPHQL_ENDPOINT with the actual endpoint URL of your GraphQL API.
+
+2. Define the GraphQL query for retrieving the data. Include any variables needed for filtering. For example:
+
+query RESOURCE_BY_CATEGORY($title: String!) 
+{
+     resources(where: {category_some: { title_contains:$title } }) 
+     { 
+        id 
+        title
+        url 
+        content { html } 
+        image { altText 
+                url
+              } 
+     } 
+}
+
+3. Create a state variable for the category title, and a function to update it:
+
+import { useState } from'react'; 
+function ResourceList() { 
+    const [categoryTitle, setCategoryTitle] = useState('');
+    async functionfetchResourcesByCategoryTitle(title) { 
+        const data = awaitgraphQLClient.request(RESOURCE_BY_CATEGORY, { title, });
+        setResources(data.resources); }
+        // ...
+     }
+
+4.Render a text input for the category title, and call fetchResourcesByCategoryTitle when the input value changes:
+
+
+function ResourceList() { 
+    // ...
+    return ( 
+        <div> 
+            <input type="text"value={categoryTitle} onChange={(e) => { 
+                setCategoryTitle(e.target.value); fetchResourcesByCategoryTitle(e.target.value);
+             }} 
+             /> 
+             <ul>{resources.map((resource) => (
+                <li key={resource.id}> 
+                    <h2>{resource.title}</h2> 
+                    <p>{resource.url}</p> 
+                    <div dangerouslySetInnerHTML={{__html: resource.content.html }} > 
+                        <img src={resource.image.url}
+                        alt={resource.image.altText} />
+                    </li>
+                     ))}
+                 </ul> 
+                </div> 
+                 ); 
+                }
+Note that we're using the dangerouslySetInnerHTML attribute to render the HTML content.
+
+5. Optional: Add a "clear" button that resets the category state:
+
+
+function ResourceList() { 
+    // ...
+    function fetchAllResources() {
+        setCategoryTitle('');
+        setResources([]); } 
+        return (
+            <div> 
+                <input type="text" value={categoryTitle} onChange={(e) =>{ s
+                    etCategoryTitle(e.target.value); fetchResourcesByCategoryTitle(e.target.value); }} /> 
+                    <button onClick={() =>fetchAllResources()}>Clear</button>
+                    <ul> {resources.map((resource) => ( 
+                        <li key={resource.id}> 
+                            <h2>{resource.title}</h2> 
+                            <p>{resource.url}</p> 
+                            <div dangerouslySetInnerHTML={{__html:resource.content.html}}
+                             /> 
+                             <img src={resource.image.url} alt={resource.image.altText} />
+                            </li> 
+                            ))} 
+                        </ul> 
+                    </div> 
+                    ); }
+
+
+6.Pass in any required variables to the GraphQL query. For example:
+
+
+const RESOURCE_BY_CATEGORY = gql` query RESOURCE_BY_CATEGORY($title: String!) 
+{ resources(where: { category_some: { title_contains: $title } }) {
+
+
+//With Button
+
+
+To filter resources by category using a button for each category, you'll need to modify the ResourceList component to add the category filter buttons and handle their click events.
+
+Here's an example implementation:
+
+
+import { useState } from 'react';
+import { GraphQLClient } from'graphql-request'; 
+
+const graphQLClient = new GraphQLClient(process.env.GRAPHQL_ENDPOINT);
+
+const CATEGORIES_QUERY = gql`
+ query CATEGORIES_QUERY { 
+    categories { 
+        id 
+        title
+     } 
+    } 
+    `; 
+
+const RESOURCE_BY_CATEGORY_QUERY = gql`
+ query RESOURCE_BY_CATEGORY($title: String!) {
+     resources(where: { category_some: { title_contains: $title } }) {
+         id 
+         title
+          url 
+          content { html } 
+          image { altText
+             url } 
+            }
+         }
+          `;
+
+function ResourceList() {
+     const [categoryTitle, setCategoryTitle] = useState('');
+      const [categories, setCategories] = useState([]);
+      const [resources, setResources] = useState([]); 
+      
+    async functionfetchCategories() { 
+        const data = awaitgraphQLClient.request(CATEGORIES_QUERY);
+        setCategories(data.categories); }
+        
+    async functionfetchResourcesByCategoryTitle(title) {
+             const data = awaitgraphQLClient.request(RESOURCE_BY_CATEGORY_QUERY, { title, });
+             setResources(data.resources); }
+             
+    function handleCategoryClick(title) {
+        setCategoryTitle(title);
+        fetchResourcesByCategoryTitle(title);
+     } 
+     
+     function handleClearClick() {
+        setCategoryTitle('');
+        setResources([]); 
+    } 
+        return ( 
+            <div>
+                <div> 
+                    {categories.map((category) => ( 
+                        <button key={category.id}onClick={() =>
+                            handleCategoryClick(category.title)}> 
+                            {category.title} 
+                        </button> ))}
+                        <button onClick={handleClearClick}>Clear</button>
+                    </div>
+                     <input type="text" value={categoryTitle} onChange={(e) => { 
+                        setCategoryTitle(e.target.value); 
+                        fetchResourcesByCategoryTitle(e.target.value); }} /> 
+                        <ul>{resources.map((resource) => ( 
+                            <li key={resource.id}> 
+                            <h2>{resource.title}</h2> 
+                            <p>{resource.url}</p> 
+                            <div dangerouslySetInnerHTML={{__html:resource.content.html}} /> 
+                            <img src={resource.image.url} 
+                            alt={resource.image.altText} /> 
+                        </li>))} 
+                    </ul> 
+                </div> 
+                ); 
+            }
+In this example, we added a new query to fetch all available categories and render a button for each category. 
+When a category button is clicked, it sets the category title state and fetches the resources for that category. 
+We also added a "Clear" button that resets the category state and clears the list of resources.
+
+Note that we kept the original text input for filtering by category title, so you can filter resources by typing a keyword in the input field if you prefer.

@@ -64,3 +64,148 @@ return ( <div>
 <Article key={resource.slug} className='border-b-2' resource={resource} />
 ))}</div>
 )}
+
+
+
+from chat gpt 
+
+Yes, I can explain how to filter by category from GraphQL data using graphQL-request instead of Apollo in Next.js and React. Here are the general steps:
+
+Install the graphql-request package:
+
+bashCopy code
+npm install graphql-request
+Import the GraphQLClient class from graphql-request and create a client instance:
+
+jsxCopy code
+import { GraphQLClient } from 'graphql-request';
+ const graphQLClient = newGraphQLClient(process.env.GRAPHQL_ENDPOINT);
+
+You'll need to replace process.env.GRAPHQL_ENDPOINT with the actual endpoint URL of your GraphQL API.
+
+Define the GraphQL query for retrieving the data. Include any variables needed for filtering. For example:
+
+
+query GetProductsByCategory($category: String!) 
+{ products(where: { category: { name:{ eq: $category } } }) 
+{ id
+   name 
+   description 
+   price } 
+  }
+
+
+
+Use the useEffect hook to fetch the data when the component mounts:
+
+
+import { useEffect, useState } from 'react'; 
+function ProductList({ category }) {
+  const [products, setProducts] = useState([]); 
+  const [loading, setLoading] = useState(true); 
+  const [error, setError] = useState(null); 
+  
+  useEffect(() => { asyncfunction fetchData() { 
+    try { const data = awaitgraphQLClient.request(GET_PRODUCTS_BY_CATEGORY, { category, });
+    
+    setProducts(data.products); setLoading(false); } 
+    catch (err) { setError(err);setLoading(false); } } 
+    
+    fetchData(); }, [category]); 
+    
+    if (loading) return <p>Loading...</p>; 
+    if (error) return <p>Error: {error.message}</p>; 
+    return ( <ul>{products.map((product) => ( 
+    <li key={product.id}> 
+    <h2>{product.name}</h2> 
+    <p>{product.description}</p> 
+    <p>${product.price}</p> </li> ))} </ul> ); }
+
+
+Pass in the category as a prop to the component that fetches the data. 
+For example:
+
+jsxCopy code
+import { useRouter } from 'next/router'; 
+
+function ProductPage() { 
+  const router = useRouter(); 
+  const { category } = router.query; 
+  return (
+     <div> 
+      <h1>Products in {category}</h1> 
+      <ProductList category={category} /> 
+      </div> 
+      ); 
+    }
+This assumes that you have a GraphQL API set up with a
+ products type that has a category field, and that you are 
+ using the useRouter hook from the next/router package to get the
+ category from the URL query string.
+
+
+
+ //by button
+
+
+1. Import the GraphQLClient class from graphql-request and create a client instance:
+
+import { GraphQLClient } from 'graphql-request'; 
+const graphQLClient = newGraphQLClient(process.env.GRAPHQL_ENDPOINT);
+
+
+
+You'll need to replace process.env.GRAPHQL_ENDPOINT with the actual endpoint URL of your GraphQL API.
+
+2. Define the GraphQL query for retrieving the data. Include any variables needed for filtering. For example:
+
+graphqlCopy code
+query GetProductsByCategory($category: String!)
+ {
+   products(where: { category: { name:{ eq: $category } } }) 
+   { id
+     name 
+     description 
+     price 
+    } 
+  }
+
+
+3. Create a state variable for the category, and a function to update it:
+
+jsxCopy code
+import { useState } from 'react'; function ProductList() { 
+  const [category, setCategory] = useState(null); 
+  
+  async function fetchProductsByCategory(category) {
+    const data = await graphQLClient.request(GET_PRODUCTS_BY_CATEGORY, { category, });
+    setProducts(data.products); } 
+   }
+
+4. Render a button for each category, and call fetchProductsByCategory when a button is clicked:
+
+jsxCopy code
+function ProductList() { 
+  
+   const categories = ['Electronics', 'Clothing', 'Toys']; 
+   return ( <div> <div> {categories.map((category) => ( 
+   <button key={category}onClick={() => fetchProductsByCategory(category)}> 
+   {category} </button> 
+   ))} 
+   </div>
+   <ul> {products.map((product) => ( 
+   <li key={product.id}> 
+   <h2>{product.name}</h2> 
+   <p>{product.description}</p> 
+   <p>${product.price}</p> 
+   </li> 
+   ))}
+    </ul> 
+    </div> ); }
+
+
+   5. Optional: Add a "show all" button that resets the category state:
+
+jsxCopy code
+function <span class="hljs-title function_" style="border: 0px solid rgb(217, 217, 227); box-sizing: border-box; --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgba(59,130,246,0.5); --tw-ring-offset-shadow: 0 0 transparent; --tw-ring-shadow: 0 0 transparent; --tw-shadow: 0 0 transparent; --tw-shadow-colored: 0 0 transparent; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ;
+...
