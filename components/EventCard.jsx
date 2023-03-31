@@ -2,7 +2,15 @@ import React from "react";
 import Link from "next/link";
 import moment from "moment";
 
-function EventCard({ title, briefDescription, startDate, endTime, zoomLink }) {
+function EventCard({
+  title,
+  briefDescription,
+  startDate,
+  endTime,
+  active,
+  zoomLink,
+  isLiveEvent,
+}) {
   return (
     <div
       className=" bg-white rounded shadow-md flex flex-col items-start justify-center 
@@ -22,16 +30,33 @@ function EventCard({ title, briefDescription, startDate, endTime, zoomLink }) {
         </h4>
         <p className="text-base mt-2 mb-4">Speaker: {briefDescription} </p>
 
-        {/* <Link href={zoomLink} target="_blank">
+        {isLiveEvent ? (
+          <p className="font-bold">Live Event</p>
+        ) : (
+          <p className="font-bold">Recorded Event</p>
+        )}
+        {active ? (
+          <Link href={zoomLink} target="_blank">
+            <button
+              className="text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg py-2 px-4
+                   md:py-2 md:px-4 md:mx-10
+                   lg:px-8 lg:py-3 lg:text-lg 
+                   hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
+            >
+              Zoom Link
+            </button>
+          </Link>
+        ) : (
           <button
-            className="text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg py-2 px-4
-                            md:py-2 md:px-4 md:mx-10
-                            lg:px-8 lg:py-3 lg:text-lg 
-                            hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
+            disabled
+            className="text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg py-2 px-4 my-4
+               md:py-2 md:px-4 md:mx-5
+               lg:px-8 lg:py-3 lg:text-lg 
+               hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
           >
-            Zoom Link
+            Link coming soon
           </button>
-        </Link> */}
+        )}
       </div>
     </div>
   );
