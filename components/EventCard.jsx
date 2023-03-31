@@ -1,6 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import moment from "moment";
+import { AiOutlineWifi } from "react-icons/ai";
+import { FaVideo } from "react-icons/fa";
 
 function EventCard({
   title,
@@ -31,9 +33,13 @@ function EventCard({
         <p className="text-base mt-2 mb-4">Speaker: {briefDescription} </p>
 
         {isLiveEvent ? (
-          <p className="font-bold">Live Event</p>
+          <p className="font-bold flex">
+            <AiOutlineWifi className="mx-1 text-2xl" /> Live Event
+          </p>
         ) : (
-          <p className="font-bold">Recorded Event</p>
+          <p className="font-bold flex">
+            <FaVideo className="mx-2 text-2xl" /> Recorded Event
+          </p>
         )}
         {active ? (
           <Link href={zoomLink} target="_blank">
