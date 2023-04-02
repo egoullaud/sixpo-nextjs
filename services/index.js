@@ -113,7 +113,7 @@ export const SPEAKERS_QUERY = gql`
 
 export const SCHEDULE_QUERY = gql`
   {
-    schedules {
+    schedules(first: 100) {
       id
       title
       active
