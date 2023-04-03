@@ -27,27 +27,43 @@ function Directions() {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
-      <div className="flex justify-start m-5 lg:w-[70%]">
-        <h2
-          className="font-bold text-2xl p-2 underline
+      <div className="flex justify-center items-center m-5 lg:w-[100%]">
+        <div className="md:w-[50%] lg:w-[30%]">
+          <h2
+            className="font-bold text-2xl p-2 underline text-center
             lg:text-3xl"
-        >
-          Location:
-        </h2>
-        <Link
-          target="_blank"
-          href="https://www.google.com/maps/place/Heritage+Hall/@49.2572552,-123.1030644,17z/data=!3m2!4b1!5s0x548673e3716e6ddd:0xff07acb7c8760d7d!4m6!3m5!1s0x548673e3669ce3ad:0x7c84d4bd7f6028b3!8m2!3d49.2572552!4d-123.1008704!16s%2Fm%2F0n9gps0"
-        >
-          <p
-            className="px-5 hover:underline hover:ease-in-out hover:duration-500
+          >
+            Location:
+          </h2>
+          <Link
+            target="_blank"
+            href="https://www.google.com/maps/place/Heritage+Hall/@49.2572552,-123.1030644,17z/data=!3m2!4b1!5s0x548673e3716e6ddd:0xff07acb7c8760d7d!4m6!3m5!1s0x548673e3669ce3ad:0x7c84d4bd7f6028b3!8m2!3d49.2572552!4d-123.1008704!16s%2Fm%2F0n9gps0"
+          >
+            <p
+              className="px-5 text-center hover:underline hover:ease-in-out hover:duration-500
                       lg:text-xl
            "
-          >
-            Heritage Hall <br />
-            3102 Main Street, <br />
-            Vancouver, BC V5T 3G7
-          </p>
-        </Link>
+            >
+              Heritage Hall <br />
+              3102 Main Street, <br />
+              Vancouver, BC V5T 3G7
+            </p>
+          </Link>
+        </div>
+        <div className="md:w-[50%] lg:w-[30%] flex justify-center items-center">
+          <Link href="/schedule">
+            <button
+              className="
+                      text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
+                      py-2 px-4 mb-4 
+                      md:py-2 md:px-4 md:mx-5
+                      lg:px-8 lg:py-3 lg:text-lg 
+                      hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
+            >
+              Event Schedule
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );
