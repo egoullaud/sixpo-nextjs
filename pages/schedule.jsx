@@ -25,7 +25,7 @@ function schedule({ schedules }) {
       >
         Event Schedule
       </h1>
-      <div className="flex justify-center items-center mt-4">
+      <div className="flex flex-col md:flex-row justify-center items-center mt-4">
         <Link href="/events">
           <button
             className="
@@ -35,19 +35,38 @@ function schedule({ schedules }) {
                       lg:px-8 lg:py-3 lg:text-lg 
                       hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
           >
-            Event Page
+            Back to Event Page
           </button>
         </Link>
-        <Link href="/home">
+
+        <Link
+          href="https://www.eventbrite.ca/e/sixpo-festival-tickets-530930426197"
+          target="_blank"
+        >
+          <button
+            className="
+            text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
+            py-2 px-4 mx-1 mb-4
+            md:py-2 md:px-4 md:mx-1
+            lg:px-8 lg:py-3 lg:text-lg lg:mx-2
+            hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
+          >
+            Register with Eventbrite
+          </button>
+        </Link>
+        <Link
+          href="https://drive.google.com/file/d/1r2w7SIpCMMroNstVRL-e903itOeIcWCe/view?usp=sharing"
+          target="_blank"
+        >
           <button
             className="
                       text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
-                      py-2 px-4 mb-4 ml-2
-                      md:py-2 md:px-4 md:mx-5
-                      lg:px-8 lg:py-3 lg:text-lg 
+                      py-2 px-4 mx-1 mb-4
+                      md:py-2 md:px-4 md:mx-1
+                      lg:px-8 lg:py-3 lg:text-lg lg:mx-2
                       hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
           >
-            Home Page
+            Event Program (PDF)
           </button>
         </Link>
       </div>
