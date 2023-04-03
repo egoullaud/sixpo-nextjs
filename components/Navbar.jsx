@@ -95,12 +95,12 @@ function Navbar() {
             className={
               !dropdown
                 ? "hidden"
-                : "absolute z-10 origin-top pt-2 py-3 bg-[#ff5b5b]  rounded px-2 transition-all duration-2000"
+                : "absolute z-10 origin-top pt-2 py-3 bg-black bg-opacity-80  rounded px-2 transition-all duration-2000"
             }
           >
             <Link href="/events" legacyBehavior>
               <a
-                className=" p-2 hover:underline hover:transition-all hover:duration-500
+                className=" p-2 hover:transition-all hover:duration-500 hover:underline hover:text-[#ffef91]
                
                 "
               >
@@ -110,10 +110,30 @@ function Navbar() {
             <li>
               <Link href="/schedule" legacyBehavior>
                 <a
-                  className=" p-2 hover:underline hover:transition-all hover:duration-500
+                  className=" p-2 hover:transition-all hover:duration-500 hover:underline hover:text-[#ffef91]
                "
                 >
                   Schedule
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/agreement" legacyBehavior>
+                <a
+                  className=" p-2 hover:transition-all hover:duration-500 hover:underline hover:text-[#ffef91]
+               "
+                >
+                  Community Agreements
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/conduct" legacyBehavior>
+                <a
+                  className=" p-2 hover:transition-all hover:duration-500 hover:underline hover:text-[#ffef91]
+               "
+                >
+                  Code of Conduct
                 </a>
               </Link>
             </li>
@@ -195,6 +215,12 @@ function Navbar() {
             </li>
             <li className="my-1 p-2 w-[100%]  hover:ease-in-out hover:duration-500 hover:underline hover:text-[#ffef91]">
               <Link href="/resources">Resources</Link>
+            </li>
+            <li className="my-1 p-2 w-[100%]  hover:ease-in-out hover:duration-500 hover:underline hover:text-[#ffef91]">
+              <Link href="/agreement">Community Agreements</Link>
+            </li>
+            <li className="my-1 p-2 w-[100%]  hover:ease-in-out hover:duration-500 hover:underline hover:text-[#ffef91]">
+              <Link href="/conduct">Code of conduct</Link>
             </li>
           </ul>
           <ul className="flex mx-2 text-white text-2xl md:text-4xl pt-2">
