@@ -47,7 +47,7 @@ function conduct() {
       </div>
       <div className="w-[90%] flex flex-col justify-center items-center md:mx-[2rem] mb-4">
         <h2 className="font-bold text-xl xl:text-2xl my-2">Zero Tolerance</h2>
-        <ol className="w-[100%] md:px-[2rem] xl:text-xl list-customAlpha mb-2">
+        <ol className="w-[100%] md:px-[2rem] xl:text-xl list-customAlpha mb-2 xl:px-[5rem]">
           Sixpo has zero tolerance for:
           <li className="ml-[4rem] my-1">
             physical and sexual assault or battery;
@@ -77,10 +77,10 @@ function conduct() {
         </p>
       </div>
       <div className="w-[90%] flex flex-col justify-center items-center md:mx-[4rem] mb-4">
-        <h2 className="font-bold text-xl xl:text-2xl my-2">
+        <h2 className="font-bold text-center text-xl xl:text-2xl my-2">
           Harassment in Public Restrooms
         </h2>
-        <p className="md:mx-[2rem] xl:mx-[5rem] xl:text-xl">
+        <p className="md:px-[2rem] xl:mx-[5rem] xl:px-[5rem] xl:text-xl w-[100%]">
           Attendees of SIXPO are welcome to use the restrooms that match their
           gender presentation or identity.
         </p>
@@ -104,7 +104,7 @@ function conduct() {
       </div>
       <div className="w-[90%] flex flex-col justify-center items-center md:mx-[4rem] mb-4">
         <h2 className=" font-bold text-xl xl:text-2xl my-2">COVID-19</h2>
-        <ol className="w-[100%] md:px-[2rem] xl:text-xl list-customAlpha mb-2">
+        <ol className="w-[100%] md:px-[2rem] xl:text-xl list-customAlpha mb-2 xl:px-[5rem]">
           Attendees of SIXPO must comply with all set procedures to reduce the
           spread of COVID-19 while attending SIXPO, and must only attend if
           they:
@@ -160,7 +160,7 @@ function conduct() {
           and hazards and the possibility of personal injury or loss resulting
           from participating in SIXPO.
         </p>
-        <ol className="w-[100%] md:px-[2rem] xl:text-xl list-customAlpha my-2">
+        <ol className="w-[100%] md:px-[2rem] xl:text-xl list-customAlpha my-2 xl:px-[5rem]">
           By attending SIXPO, each Attendee of SIXPO:
           <li className="ml-[4rem] my-2">
             waives any and all claims that they have or may in the future have
