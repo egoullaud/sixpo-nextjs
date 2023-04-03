@@ -2,17 +2,17 @@ import React from "react";
 
 export default function Recording() {
   return (
-    <div className="my-[4rem]">
+    <div className="my-[4rem] mx-4">
       <h1
         className="font-bold m-4 text-center text-2xl my-[2rem]
       lg:text-4xl"
       >
         In Person Recording and Photography
       </h1>
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row justify-center items-start">
         <div
           className="flex flex-col justify-center items-center mx-4
-                        md:w-[50%] "
+                        md:w-[40%] "
         >
           <h2
             className="text-center font-bold my-4
@@ -20,7 +20,7 @@ export default function Recording() {
           >
             Photography
           </h2>
-          <p className="mx-4">
+          <p className="mx-4 mt-3">
             The SIXPO Festival is a public event, have fun! Please take photos!
             Tag @yvrsixpo on Instagram and Facebook.
             <br /> <br />
@@ -40,7 +40,7 @@ export default function Recording() {
         </div>
         <div
           className="flex flex-col justify-center items-center mx-4
-                        md:w-[50%] "
+                        md:w-[40%] "
         >
           <h2
             className="text-center font-bold my-4
