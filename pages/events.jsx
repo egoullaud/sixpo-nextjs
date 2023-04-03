@@ -124,6 +124,14 @@ function events({ speakers, sponsors }) {
               While SIXPO is a free event, our venue has limited capacity and we
               want to be as prepared to welcome as many of you as possible, and
               this means that signing up ahead of time will help us out a lot.
+              <br /> <br />
+              <span className="font-bold">Public Event: </span>
+              This is a public event. You are encouraged to invite people and
+              make new friends! If you feel uncomfortable and need to talk to
+              someone, please visit the Wellness space or find a volunteer.
+              <br /> <br /> We don’t tolerate verbal or physical violence,
+              sexual harassment, or discrimination at SIXPO. If you do any of
+              these things, we will ask you to leave.
             </p>
           </div>
           <div
