@@ -27,13 +27,13 @@ function Directions() {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
-      <div className="flex justify-center items-center m-5 lg:w-[100%]">
-        <div className="md:w-[50%] lg:w-[30%]">
+      <div className="flex justify-center items-start lg:w-[100%]">
+        <div className=" flex flex-col md:w-[50%] lg:w-[40%] ">
           <h2
-            className="font-bold text-2xl p-2 underline text-center
+            className="font-bold text-2xl p-2 my-4 text-center
             lg:text-3xl"
           >
-            Location:
+            In Person Event Address
           </h2>
           <Link
             target="_blank"
@@ -50,7 +50,13 @@ function Directions() {
             </p>
           </Link>
         </div>
-        <div className="md:w-[50%] lg:w-[30%] flex justify-center items-center">
+        <div className=" flex-col md:w-[50%] lg:w-[40%] flex justify-center items-center">
+          <h2
+            className="font-bold text-2xl p-2  text-center my-4
+            lg:text-3xl"
+          >
+            Check out the event schedule!
+          </h2>
           <Link href="/schedule">
             <button
               className="
