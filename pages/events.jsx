@@ -10,6 +10,7 @@ import Directions from "@/components/Directions";
 import Form from "@/components/Form";
 import { GraphQLClient, gql } from "graphql-request";
 import { SPEAKERS_QUERY, SPONSORS_QUERY } from "@/services";
+import Recording from "@/components/Recording";
 
 export async function getStaticProps() {
   const { speakers } = await new GraphQLClient(
@@ -230,40 +231,25 @@ function events({ speakers, sponsors }) {
                       xl:mt-[3rem]
         "
         >
-          <Link
-            href="https://drive.google.com/file/d/1r2w7SIpCMMroNstVRL-e903itOeIcWCe/view?usp=sharing"
-            target="_blank"
-          >
-            <button
-              className="
-                      text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
-                      py-2 px-4 mx-1 mb-4
-                      md:py-2 md:px-4 md:mx-1
-                      lg:px-8 lg:py-3 lg:text-lg lg:mx-2
-                      hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
-            >
-              Recording Policy
-            </button>
-          </Link>
-          <Link href="/schedule">
+          <Link href="/agreement">
             <button
               className="
               text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
               py-2 px-4 mx-1 mb-4
               md:py-2 md:px-4 md:mx-1
-              lg:px-8 lg:py-3 lg:text-lg lg:mx-2
+              lg:px-8 lg:py-3 lg:text-lg lg:mx-2 lg:mr-[2rem]
               hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
             >
               Community Agreement
             </button>
           </Link>
-          <Link href="/schedule">
+          <Link href="/conduct">
             <button
               className="
               text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
               py-2 px-4 mx-1 mb-4
               md:py-2 md:px-4 md:mx-1
-              lg:px-8 lg:py-3 lg:text-lg lg:mx-2
+              lg:px-8 lg:py-3 lg:text-lg lg:mx-2 lg:ml-[2rem]
               hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
             >
               Code of Conduct
@@ -297,6 +283,10 @@ function events({ speakers, sponsors }) {
         </div>
       </section>
 
+      {/* RECORDING */}
+      <section>
+        <Recording />
+      </section>
       {/* sponsors section */}
       <section className="my-[2rem]">
         <h1
