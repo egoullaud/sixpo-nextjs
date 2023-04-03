@@ -191,8 +191,8 @@ function events({ speakers, sponsors }) {
           </Link>
         </div>
       </section>
-      {/* what to expect */}
 
+      {/* what to expect */}
       <section className="mb-[3rem]">
         <h3
           className="font-bold text-4xl mb-[3rem] mx-[2rem]
@@ -200,13 +200,14 @@ function events({ speakers, sponsors }) {
         >
           What to Expect
         </h3>
-        <p className=" mx-[2rem] my-[1rem] text-xl">
+        <p className=" mx-[2rem] my-[1rem] text-xl lg:mx-[4rem] lg:text-2xl">
           You can expect a variety of vendors, presentations and workshops from
           a wide variety of organizations, experts and advocates!{" "}
         </p>
         <ul
           className=" list-decimal mx-[2.5rem]
-                      md:mx-[4rem]"
+                      md:mx-[4rem]
+                      lg:mx-[8rem] lg:w-[70%] lg:text-xl"
         >
           <li className="my-2">
             Week one will focus on the basics, introductory workshops,
@@ -223,7 +224,54 @@ function events({ speakers, sponsors }) {
             celebrating what we’ve all learned!{" "}
           </li>
         </ul>
+        <div
+          className="flex flex-col items-center justify-center my-[1rem]
+                      md:flex-row
+                      xl:mt-[3rem]
+        "
+        >
+          <Link
+            href="https://drive.google.com/file/d/1r2w7SIpCMMroNstVRL-e903itOeIcWCe/view?usp=sharing"
+            target="_blank"
+          >
+            <button
+              className="
+                      text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
+                      py-2 px-4 mx-1 mb-4
+                      md:py-2 md:px-4 md:mx-1
+                      lg:px-8 lg:py-3 lg:text-lg lg:mx-2
+                      hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
+            >
+              Recording Policy
+            </button>
+          </Link>
+          <Link href="/schedule">
+            <button
+              className="
+              text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
+              py-2 px-4 mx-1 mb-4
+              md:py-2 md:px-4 md:mx-1
+              lg:px-8 lg:py-3 lg:text-lg lg:mx-2
+              hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
+            >
+              Community Agreement
+            </button>
+          </Link>
+          <Link href="/schedule">
+            <button
+              className="
+              text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
+              py-2 px-4 mx-1 mb-4
+              md:py-2 md:px-4 md:mx-1
+              lg:px-8 lg:py-3 lg:text-lg lg:mx-2
+              hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
+            >
+              Code of Conduct
+            </button>
+          </Link>
+        </div>
       </section>
+
       {/* Speakers section */}
       <section>
         <h1
@@ -248,6 +296,7 @@ function events({ speakers, sponsors }) {
           ))}
         </div>
       </section>
+
       {/* sponsors section */}
       <section className="my-[2rem]">
         <h1
@@ -277,6 +326,7 @@ function events({ speakers, sponsors }) {
         ))}
       </section>
 
+      {/* register button */}
       <div className="w-[100%] flex items-center justify-center my-[3rem]">
         <Link
           href="https://www.eventbrite.ca/e/sixpo-festival-tickets-530930426197"
