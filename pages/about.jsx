@@ -110,10 +110,9 @@ function about({ sponsors }) {
                   md:text-xl
                   lg:text-4xl lg:leading-loose "
           >
-            SIXpo: Sexuality, Inclusion and eXploration is a three week virtual
-            expo run by and for folks with disabilities. During the three weeks
-            we will host a number of online workshops, panels, presentations and
-            discussions over zoom.
+            SIXPO (Sexuality, Inclusion and Exploration) is a festival organized
+            by folks with disabilities for their community, where we learn
+            together about topics related to sexual wellness.
           </h1>
           <Link
             className="flex justify-center items-center 
