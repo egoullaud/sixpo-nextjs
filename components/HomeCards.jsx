@@ -8,7 +8,7 @@ import Image from "next/image";
 function HomeCards() {
   return (
     <div
-      className="grid grid-cols-1 items-start justify-items-center gap-3 mx-[1rem]
+      className="grid grid-cols-1  gap-3 mx-[1rem]
     md:grid-cols-3
     lg:mx-[3rem]"
     >
