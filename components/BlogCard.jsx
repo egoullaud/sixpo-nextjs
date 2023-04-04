@@ -15,14 +15,14 @@ export default function BlogPost({
   return (
     <div>
       <div
-        className="bg-white rounded shadow-md flex flex-col items-center justify-center
+        className="bg-white rounded shadow-md flex flex-col items-center justify-center mb-4
                              
                              lg:flex-row"
       >
         <Link
           className="w-[100%] object-cover 
                     lg:w-[70%] xl:m-4"
-          href={"/blog/" + slug}
+          href={"/posts/" + slug}
         >
           <img className="rounded mx-auto" src={image} alt={image_alt} />
         </Link>
@@ -46,7 +46,7 @@ export default function BlogPost({
           </h4>
           <p className="text-base mx-4 my-2">
             {preview}
-            <Link className="font-semibold mx-1" href={"/blog/" + slug}>
+            <Link className="font-semibold mx-1" href={"/posts/" + slug}>
               <button className="underline hover:font-bold transition-all duration-700">
                 Read More
               </button>
