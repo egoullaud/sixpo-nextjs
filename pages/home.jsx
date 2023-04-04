@@ -96,20 +96,50 @@ function home({ sponsors }) {
               conversations are brand new for you, or you are really confident
               in talking about sexuality, we have events that are right for you!
             </p>
-            <Link
-              className="md:w-[45%] lg:w-[65%] flex justify-center"
-              href="/about"
-            >
-              <button
-                className=" text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
+            <div className="flex flex-col md:flex-row">
+              <Link
+                className="w-[100%] mb-4 md:mx-1 flex justify-center"
+                href="/about"
+              >
+                <button
+                  className=" text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
                       py-2 px-4
                       md:py-2 md:px-4 
                       lg:px-8 lg:py-3 lg:text-lg 
                       hover:transition-all hover:duration-500 hover:bg-[#ff7070]"
+                >
+                  Learn More
+                </button>
+              </Link>
+              <Link
+                className="w-[100%] mb-4 md:mx-1 flex justify-center"
+                href="/event"
               >
-                Learn More
-              </button>
-            </Link>
+                <button
+                  className=" text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
+                      py-2 px-4
+                      md:py-2 md:px-4 
+                      lg:px-8 lg:py-3 lg:text-lg 
+                      hover:transition-all hover:duration-500 hover:bg-[#ff7070]"
+                >
+                  Event Details
+                </button>
+              </Link>
+              <Link
+                className="w-[100%] mb-4 md:mx-1 flex justify-center"
+                href="/schedule"
+              >
+                <button
+                  className=" text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
+                      py-2 px-4
+                      md:py-2 md:px-4 
+                      lg:px-8 lg:py-3 lg:text-lg 
+                      hover:transition-all hover:duration-500 hover:bg-[#ff7070]"
+                >
+                  Event Schedule
+                </button>
+              </Link>
+            </div>
           </div>
           <div
             className="flex items-center justify-center 
