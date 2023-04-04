@@ -27,13 +27,13 @@ function Directions() {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
-      <div className="flex justify-center items-start lg:w-[100%]">
+      <div className="flex flex-col md:flex-row justify-center items-center md:items-start lg:w-[100%]">
         <div className=" flex flex-col md:w-[50%] lg:w-[40%] ">
           <h2
             className="font-bold text-2xl p-2 my-4 text-center
             lg:text-3xl"
           >
-            In Person Event Address
+            Event Address
           </h2>
           <Link
             target="_blank"
@@ -52,23 +52,24 @@ function Directions() {
         </div>
         <div className=" flex-col md:w-[50%] lg:w-[40%] flex justify-center items-center">
           <h2
-            className="font-bold text-2xl p-2  text-center my-4
+            className="font-bold text-2xl p-2 my-4 text-center
             lg:text-3xl"
           >
-            Check out the event schedule!
+            Directions By Bus
           </h2>
-          <Link href="/schedule">
-            <button
-              className="
-                      text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
-                      py-2 px-4 mb-4 
-                      md:py-2 md:px-4 md:mx-5
-                      lg:px-8 lg:py-3 lg:text-lg 
-                      hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
-            >
-              Event Schedule
-            </button>
-          </Link>
+          <ul className="list-disc mx-10">
+            <li>
+              bus 3 from science world sky train: stop at Main and 14th and walk
+              2min.
+            </li>
+            <li>
+              bus 19 from Burnaby : stop at Kingsway and 12th and walk 10min
+            </li>
+            <li>
+              bus 9 or 99 from Commercial Broadway : stop at Main street and
+              walk 13-15min
+            </li>
+          </ul>
         </div>
       </div>
     </div>
