@@ -29,11 +29,11 @@ function schedule({ schedules }) {
         <Link href="/events">
           <button
             className="
-                      text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
-                      py-2 px-4 mb-4 mr-2
-                      md:py-2 md:px-4 md:mx-5
-                      lg:px-8 lg:py-3 lg:text-lg 
-                      hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
+            text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
+            py-2 px-4 mx-1 mb-4
+            md:py-2 md:px-4 md:mx-1
+            lg:px-8 lg:py-3 lg:text-lg lg:mx-2
+            hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
           >
             Back to Event Page
           </button>
