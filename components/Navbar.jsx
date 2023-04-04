@@ -98,7 +98,7 @@ function Navbar() {
                 : "absolute z-10 origin-top pt-2 py-3 bg-black bg-opacity-80  rounded px-2 transition-all duration-2000"
             }
           >
-            <Link href="/events" legacyBehavior>
+            <Link href="/event" legacyBehavior>
               <a
                 className=" p-2 hover:transition-all hover:duration-500 hover:underline hover:text-[#ffef91]
                
@@ -228,7 +228,7 @@ function Navbar() {
               <Link href="/about">About</Link>
             </li>
             <li className="my-1 p-2 w-[100%]  hover:ease-in-out hover:duration-500 hover:underline hover:text-[#ffef91]">
-              <Link href="/events">Events</Link>
+              <Link href="/event">Events</Link>
             </li>
             <li className="my-1 p-2 w-[100%]  hover:ease-in-out hover:duration-500 hover:underline hover:text-[#ffef91]">
               <Link href="/schedule">Schedule</Link>
