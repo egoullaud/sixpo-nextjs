@@ -84,7 +84,7 @@ function Navbar() {
             inline-flex hover:transition-all hover:duration-500 hover:underline hover:text-[#ffef91]"
             onClick={handleDropdown}
           >
-            Events{" "}
+            Event{" "}
             {!dropdown ? (
               <AiFillCaretDown size={20} />
             ) : (
@@ -139,7 +139,18 @@ function Navbar() {
             </li>
           </ul>
         </li>
-
+        <li className="mx-[1rem]">
+          <Link href="/schedule" legacyBehavior>
+            <a
+              className="
+               
+                
+                hover:transition-all hover:duration-500 hover:underline hover:text-[#ffef91]"
+            >
+              Schedule
+            </a>
+          </Link>
+        </li>
         <li className="lg:w-[11%] mx-[2rem] ">
           <Link href="/home">
             <Image
@@ -147,6 +158,18 @@ function Navbar() {
               src={logo}
               alt="SIXpo logo: a bright pink heart with the word SIXPO in yellow across the front and the word Festival printed in outlined letters below."
             />
+          </Link>
+        </li>
+        <li className="mx-[1rem]">
+          <Link href="/home" legacyBehavior>
+            <a
+              className="
+               
+                
+                hover:transition-all hover:duration-500 hover:underline hover:text-[#ffef91]"
+            >
+              Home
+            </a>
           </Link>
         </li>
         <li className="mx-[1rem]">
@@ -202,7 +225,7 @@ function Navbar() {
               <Link href="/home">Home</Link>
             </li>
             <li className="my-1 p-2 w-[100%]  hover:ease-in-out hover:duration-500 hover:underline hover:text-[#ffef91]">
-              <Link href="/about">About Us</Link>
+              <Link href="/about">About</Link>
             </li>
             <li className="my-1 p-2 w-[100%]  hover:ease-in-out hover:duration-500 hover:underline hover:text-[#ffef91]">
               <Link href="/events">Events</Link>
@@ -211,7 +234,7 @@ function Navbar() {
               <Link href="/schedule">Schedule</Link>
             </li>
             <li className="my-1 p-2 w-[100%]  hover:ease-in-out hover:duration-500 hover:underline hover:text-[#ffef91]">
-              <Link href="/blog">Our Blog</Link>
+              <Link href="/blog">Blog</Link>
             </li>
             <li className="my-1 p-2 w-[100%]  hover:ease-in-out hover:duration-500 hover:underline hover:text-[#ffef91]">
               <Link href="/resources">Resources</Link>
