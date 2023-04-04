@@ -27,7 +27,7 @@ export async function getStaticProps() {
   };
 }
 
-function events({ speakers, sponsors }) {
+function event({ speakers, sponsors }) {
   return (
     <div>
       {/* hero */}
@@ -355,4 +355,4 @@ function events({ speakers, sponsors }) {
   );
 }
 
-export default events;
+export default event;
