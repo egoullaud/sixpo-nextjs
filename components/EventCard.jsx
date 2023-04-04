@@ -12,10 +12,11 @@ function EventCard({
   active,
   zoomLink,
   isLiveEvent,
+  pastEvent,
 }) {
   return (
     <div
-      className=" bg-white rounded shadow-md flex flex-col items-start justify-center 
+      className=" bg-white rounded shadow-md flex flex-col items-stretch justify-center h-full
        
     lg:flex-row"
     >
@@ -41,7 +42,17 @@ function EventCard({
             <FaVideo className="mx-2 text-2xl" /> Recorded Event
           </p>
         )}
-        {active ? (
+        {pastEvent ? (
+          <button
+            disabled
+            className="text-white bg-[#5e5e5e] rounded-lg font-bold shadow-lg py-2 px-4 my-4
+           md:py-2 md:px-4 md:mx-5
+           lg:px-8 lg:py-3 lg:text-lg 
+           "
+          >
+            Event Ended
+          </button>
+        ) : active ? (
           <Link href={zoomLink} target="_blank">
             <button
               className="text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg py-2 px-4 my-4
@@ -55,10 +66,10 @@ function EventCard({
         ) : (
           <button
             disabled
-            className="text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg py-2 px-4 my-4
+            className="text-black bg-[#bcf0ff] rounded-lg font-bold shadow-lg py-2 px-4 my-4
                md:py-2 md:px-4 md:mx-5
                lg:px-8 lg:py-3 lg:text-lg 
-               hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
+               "
           >
             Link coming soon
           </button>
