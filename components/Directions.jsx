@@ -48,6 +48,13 @@ function Directions() {
               3102 Main Street, <br />
               Vancouver, BC V5T 3G7
             </p>
+            <p
+              className="px-5 text-center hover:underline hover:ease-in-out hover:duration-500
+                       py-2"
+            >
+              For people who are driving, we will have a space in front of
+              Heritage Hall for pick up and drop off.
+            </p>
           </Link>
         </div>
         <div className=" flex-col md:w-[50%] lg:w-[40%] flex justify-center items-center">
@@ -59,15 +66,16 @@ function Directions() {
           </h2>
           <ul className="list-disc mx-10">
             <li>
-              bus 3 from science world sky train: stop at Main and 14th and walk
-              2min.
+              Bus 3 from Science World sky train: <br />
+              Exit at Main and 14th and walk South 2min.
             </li>
             <li>
-              bus 19 from Burnaby : stop at Kingsway and 12th and walk 10min
+              Bus 19 from Burnaby: <br />
+              Exit at Kingsway and 12th and walk West 10min
             </li>
             <li>
-              bus 9 or 99 from Commercial Broadway : stop at Main street and
-              walk 13-15min
+              Bus 9 or 99 from Commercial Broadway: <br />
+              Exit at Main street and walk West 13-15min
             </li>
           </ul>
         </div>
