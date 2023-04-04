@@ -33,7 +33,7 @@ function blog({ posts }) {
         </div> */}
 
         <div
-          className="flex flex-col 
+          className="flex flex-col my-2
                     w-[90%]
                     md:w-[90%]
                     "
