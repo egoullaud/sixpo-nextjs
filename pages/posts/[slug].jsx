@@ -55,6 +55,7 @@ export default function BlogPost({ post }) {
          md:w-[90%]"
         >
           <img
+            priority
             className="w-[95%]  object-cover rounded m-4"
             src={post.image.url}
             alt={post.image.altText}
