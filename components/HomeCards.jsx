@@ -18,7 +18,7 @@ function HomeCards() {
             flex flex-col justify-start items-center rounded-md bg-white shadow-lg
             lg:pb-[3rem]"
       >
-        <Link href="/events">
+        <Link href="/event">
           <Image
             className="w-[90%] m-4 md:h-[13vh] lg:h-[28vh] rounded-md object-cover"
             src={eventImg}
