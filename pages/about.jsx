@@ -85,7 +85,7 @@ function about({ sponsors }) {
                 className="flex justify-center items-center 
                               md:w-[25%] md:mt-[1rem]
                               lg:mt-[2rem]"
-                href="/events"
+                href="/event"
               >
                 <button
                   className="mt-4  hover:bg-[#ff7070] hover:transition-all hover:duration-500 text-white bg-[#ff5b5b] rounded-lg font-semibold shadow-lg
@@ -120,7 +120,7 @@ function about({ sponsors }) {
                           md:w-[60%] 
                           mt-[1rem]
                           "
-            href="/events"
+            href="/event"
           >
             <button
               className=" hover:transition-all hover:duration-500 hover:bg-[#ff7070] text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
