@@ -52,7 +52,7 @@ function home({ sponsors }) {
                 {" "}
                 Join us at Sixpo Festival 2023 |
                 <Link
-                  href="/events"
+                  href="/event"
                   className=" lg:text-xl uppercase  hover:underline hover:transition-all hover:duration-500 hover:text-[#ffef91] hover:font-bold"
                 >
                   Learn More
