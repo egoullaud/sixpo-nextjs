@@ -89,6 +89,7 @@ function schedule({ schedules }) {
             briefDescription={schedule.briefDescription}
             zoomLink={schedule.zoomLink}
             isLiveEvent={schedule.isLiveEvent}
+            pastEvent={schedule.pastEvent}
           />
         ))}
       </div>
