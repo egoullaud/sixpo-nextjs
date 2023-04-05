@@ -4,7 +4,7 @@ import { SCHEDULE_QUERY } from "@/services";
 import { GraphQLClient } from "graphql-request";
 import Link from "next/link";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const { schedules } = await new GraphQLClient(
     `${process.env.HYGRAPH_URL}`
   ).request(SCHEDULE_QUERY);
