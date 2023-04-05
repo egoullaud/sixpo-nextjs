@@ -26,7 +26,7 @@ function schedule({ schedules }) {
         Event Schedule
       </h1>
       <div className="flex flex-col md:flex-row justify-center items-center mt-4">
-        <Link href="/events">
+        <Link href="/event">
           <button
             className="
             text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
