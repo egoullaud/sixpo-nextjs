@@ -160,18 +160,7 @@ function Navbar() {
             />
           </Link>
         </li>
-        <li className="mx-[1rem]">
-          <Link href="/home" legacyBehavior>
-            <a
-              className="
-               
-                
-                hover:transition-all hover:duration-500 hover:underline hover:text-[#ffef91]"
-            >
-              Home
-            </a>
-          </Link>
-        </li>
+
         <li className="mx-[1rem]">
           <Link href="/blog" legacyBehavior>
             <a
@@ -192,6 +181,22 @@ function Navbar() {
             >
               Resources
             </a>
+          </Link>
+        </li>
+        <li className="mx-[1rem] flex">
+          <Link
+            href="https://www.facebook.com/yvrsixpo/"
+            target="_blank"
+            className="mx-1"
+          >
+            <AiFillFacebook className="text-3xl" />
+          </Link>
+          <Link
+            href="https://www.instagram.com/yvrsixpo/"
+            target="_blank"
+            className="mx-1"
+          >
+            <AiFillInstagram className="text-3xl" />
           </Link>
         </li>
       </ul>
