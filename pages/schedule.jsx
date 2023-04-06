@@ -3,6 +3,7 @@ import React from "react";
 import { SCHEDULE_QUERY } from "@/services";
 import { GraphQLClient } from "graphql-request";
 import Link from "next/link";
+import { useState } from "react";
 
 function schedule({ schedules }) {
   const pastSchedules = schedules.filter((schedule) => schedule.pastEvent);
@@ -33,21 +34,6 @@ function schedule({ schedules }) {
         </Link>
 
         <Link
-          href="https://www.eventbrite.ca/e/sixpo-festival-tickets-530930426197"
-          target="_blank"
-        >
-          <button
-            className="
-            text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
-            py-2 px-4 mx-1 mb-4
-            md:py-2 md:px-4 md:mx-1
-            lg:px-8 lg:py-3 lg:text-lg lg:mx-2
-            hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
-          >
-            Register with Eventbrite
-          </button>
-        </Link>
-        <Link
           href="https://drive.google.com/file/d/1r2w7SIpCMMroNstVRL-e903itOeIcWCe/view?usp=sharing"
           target="_blank"
         >
@@ -72,6 +58,7 @@ function schedule({ schedules }) {
         {sortedSchedules.map((schedule) => (
           <EventCard
             key={schedule.id}
+            id={schedule.id}
             title={schedule.title}
             startDate={schedule.startDate}
             endTime={schedule.endTime}
@@ -79,6 +66,7 @@ function schedule({ schedules }) {
             briefDescription={schedule.briefDescription}
             zoomLink={schedule.zoomLink}
             isLiveEvent={schedule.isLiveEvent}
+            eventType={schedule.eventType}
             pastEvent={schedule.pastEvent}
             description={
               schedule.description.html.length > 0
