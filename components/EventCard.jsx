@@ -28,8 +28,8 @@ function EventCard({
           {title}
         </h3>
         <h4>
-          {moment(startDate).format("MMMM DD, YYYY HH:mm")} -{" "}
-          {moment(endTime).format("HH:mm")}
+          {moment(startDate).format("dddd, MMMM DD, YYYY h:mm A")} -{" "}
+          {moment(endTime).format("h:mm A")}
         </h4>
         <p className="text-base mt-2 mb-4">Speaker: {briefDescription} </p>
 
