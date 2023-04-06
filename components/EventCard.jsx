@@ -43,7 +43,7 @@ function EventCard({
         <p className="text-base mt-2 mb-4">Speaker: {briefDescription} </p>
 
         <p>
-          <span className="font-bold">Event Location: </span>
+          <span className="font-bold">Event Type: </span>
           {eventType.replace(/([a-z])([A-Z])/g, "$1 $2")}
         </p>
 
