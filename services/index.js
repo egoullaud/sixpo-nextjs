@@ -98,7 +98,7 @@ export const SPONSORS_QUERY = gql`
 
 export const SPEAKERS_QUERY = gql`
   {
-    speakers {
+    speakers(first: 100) {
       id
       name
       url
