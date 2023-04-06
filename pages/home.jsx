@@ -181,8 +181,7 @@ function home({ sponsors }) {
         </h1>
         {sponsors.map((sponsor) => (
           <div
-            className="grid grid-cols-2 justify-center items-center gap-2 mx-4
-            md:grid-cols-5
+            className="flex flex-wrap justify-center items-center
             "
             key={sponsor.id}
           >

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function SponsorCard({ url, image, image_alt }) {
   return (
-    <div>
+    <div className="m-4">
       <div className="flex flex-col items-center justify-center">
         <a href={url} target="_blank">
           <img
