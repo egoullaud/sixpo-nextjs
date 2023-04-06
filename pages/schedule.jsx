@@ -5,6 +5,10 @@ import { GraphQLClient } from "graphql-request";
 import Link from "next/link";
 
 function schedule({ schedules }) {
+  const pastSchedules = schedules.filter((schedule) => schedule.pastEvent);
+  const upcomingSchedules = schedules.filter((schedule) => !schedule.pastEvent);
+  const sortedSchedules = [...upcomingSchedules, ...pastSchedules];
+
   return (
     <div className="flex flex-col  bg-black bg-opacity-70 pb-[10rem] ">
       <h1
@@ -62,13 +66,10 @@ function schedule({ schedules }) {
 
       {/*   flex flex-col justify-center items-center */}
       <div
-        className="grid mx-4 gap-3
-        md:grid-cols-2 md:gap-4
-        lg:grid-cols-3
-        xl:grid-cols-4
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mx-4
       "
       >
-        {schedules.map((schedule) => (
+        {sortedSchedules.map((schedule) => (
           <EventCard
             key={schedule.id}
             title={schedule.title}
@@ -79,6 +80,11 @@ function schedule({ schedules }) {
             zoomLink={schedule.zoomLink}
             isLiveEvent={schedule.isLiveEvent}
             pastEvent={schedule.pastEvent}
+            description={
+              schedule.description.html.length > 0
+                ? schedule.description.html
+                : null
+            }
           />
         ))}
       </div>
