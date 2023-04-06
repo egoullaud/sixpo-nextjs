@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import moment from "moment";
-import { AiOutlineWifi } from "react-icons/ai";
+import { AiOutlineWifi, AiOutlinePlus } from "react-icons/ai";
 import { FaVideo } from "react-icons/fa";
 
 function EventCard({
@@ -13,10 +13,17 @@ function EventCard({
   zoomLink,
   isLiveEvent,
   pastEvent,
+  description,
 }) {
+  const [showDescription, setShowDescription] = useState(false);
+
+  const toggleDescription = () => {
+    setShowDescription(!showDescription);
+  };
+  const hasDescription = description && description.length > 10;
   return (
     <div
-      className=" bg-white rounded shadow-md flex flex-col items-stretch justify-center h-full
+      className=" event-card bg-white rounded shadow-md flex flex-col items-stretch justify-center mb-4
        
     lg:flex-row"
     >
@@ -42,6 +49,7 @@ function EventCard({
             <FaVideo className="mx-2 text-2xl" /> Recorded Event
           </p>
         )}
+
         {pastEvent ? (
           <button
             disabled
@@ -73,6 +81,27 @@ function EventCard({
           >
             Link coming soon
           </button>
+        )}
+
+        {hasDescription ? (
+          <>
+            <button
+              onClick={toggleDescription}
+              className="text-black font-bold hover:underline cursor-pointer"
+            >
+              {showDescription
+                ? "Hide Description"
+                : "Click Here to Show Description"}
+            </button>
+            {showDescription && (
+              <div
+                className="event-description mt-4 mx-4 p-4 text-center border-2 border-black"
+                dangerouslySetInnerHTML={{ __html: description }}
+              ></div>
+            )}
+          </>
+        ) : (
+          <button className="hidden"></button>
         )}
       </div>
     </div>
