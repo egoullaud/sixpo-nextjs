@@ -4,17 +4,6 @@ import { SCHEDULE_QUERY } from "@/services";
 import { GraphQLClient } from "graphql-request";
 import Link from "next/link";
 
-export async function getServerSideProps() {
-  const { schedules } = await new GraphQLClient(
-    `${process.env.HYGRAPH_URL}`
-  ).request(SCHEDULE_QUERY);
-  return {
-    props: {
-      schedules,
-    },
-  };
-}
-
 function schedule({ schedules }) {
   return (
     <div className="flex flex-col  bg-black bg-opacity-70 pb-[10rem] ">
@@ -98,3 +87,13 @@ function schedule({ schedules }) {
 }
 
 export default schedule;
+export async function getServerSideProps() {
+  const { schedules } = await new GraphQLClient(
+    `${process.env.HYGRAPH_URL}`
+  ).request(SCHEDULE_QUERY);
+  return {
+    props: {
+      schedules,
+    },
+  };
+}

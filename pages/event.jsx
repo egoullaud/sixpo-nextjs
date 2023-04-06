@@ -24,6 +24,7 @@ export async function getStaticProps() {
       speakers,
       sponsors,
     },
+    revalidate: 86400,
   };
 }
 

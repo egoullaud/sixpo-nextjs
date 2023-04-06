@@ -35,6 +35,7 @@ export async function getStaticProps() {
     props: {
       sponsors,
     },
+    revalidate: 86400,
   };
 }
 
