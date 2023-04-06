@@ -79,7 +79,7 @@ export const POST_SLUGLIST = gql`
 export const SPONSORS_QUERY = gql`
   {
     sponsors {
-      resources {
+      resources(first: 100) {
         id
         slug
         title
