@@ -11,6 +11,7 @@ function EventCard({
   endTime,
   active,
   zoomLink,
+  eventType,
   isLiveEvent,
   pastEvent,
   description,
@@ -21,34 +22,30 @@ function EventCard({
     setShowDescription(!showDescription);
   };
   const hasDescription = description && description.length > 10;
+
   return (
     <div
-      className=" event-card bg-white rounded shadow-md flex flex-col items-stretch justify-center mb-4
-       
-    lg:flex-row"
+      className={`event-card bg-white rounded shadow-md flex flex-col items-center justify-center px-4 pb-4 ${
+        showDescription ? "h-auto" : "h-96"
+      } lg:flex-row`}
     >
       <div className="flex flex-col justify-center items-center text-center py-4 w-[100%]">
         <h3
-          className="w-[95%] font-bold mb-4
-                        md:text-xl lg:mt-6 lg:text-2xl"
+          className="w-[99%] font-bold mb-4
+                        md:text-xl lg:mt-4 lg:text-2xl"
         >
           {title}
         </h3>
-        <h4>
+        <h4 className="">
           {moment(startDate).format("dddd, MMMM DD, YYYY h:mm A")} -{" "}
           {moment(endTime).format("h:mm A")}
         </h4>
         <p className="text-base mt-2 mb-4">Speaker: {briefDescription} </p>
 
-        {isLiveEvent ? (
-          <p className="font-bold flex">
-            <AiOutlineWifi className="mx-1 text-2xl" /> Live Event
-          </p>
-        ) : (
-          <p className="font-bold flex">
-            <FaVideo className="mx-2 text-2xl" /> Recorded Event
-          </p>
-        )}
+        <p>
+          <span className="font-bold">Event Location: </span>
+          {eventType.replace(/([a-z])([A-Z])/g, "$1 $2")}
+        </p>
 
         {pastEvent ? (
           <button
