@@ -275,10 +275,7 @@ function event({ speakers, sponsors }) {
         >
           Our Speakers
         </h1>
-        <div
-          className="flex flex-col items-start my-4
-                       lg:flex-row"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-4 gap-4 ">
           {speakers.map((speaker) => (
             <Speakers
               key={speaker.id}
