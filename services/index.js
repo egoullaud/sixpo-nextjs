@@ -117,6 +117,7 @@ export const SCHEDULE_QUERY = gql`
       id
       title
       active
+      eventType
       pastEvent
       briefDescription
       zoomLink
