@@ -162,6 +162,16 @@ function Navbar() {
         </li>
 
         <li className="mx-[1rem]">
+          <Link href="https://docs.google.com/forms/d/e/1FAIpQLSewHd9BLsWaGICIKn9KXwPbfIuez24Vtcf4GYP-oApYr6G1dg/viewform?usp=sf_link" legacyBehavior>
+            <a
+              className="
+                hover:transition-all hover:duration-500 hover:underline hover:text-[#ffef91]"
+            >
+              Feedback
+            </a>
+          </Link>
+        </li>
+        <li className="mx-[1rem]">
           <Link href="/blog" legacyBehavior>
             <a
               className="
