@@ -78,16 +78,16 @@ function inperson({ inPersonEvents }) {
                 )}
                 <div className="flex flex-col justify-center bg-white w-[90%] py-4 my-4">
                   {/* container */}
-                  <div className="flex justify-center items-center">
-                    <h4 className="w-[25%] text-lg font-bold text-left">
+                  <div className="flex flex-col md:flex-row justify-center items-center">
+                    <h4 className="md:w-[25%] text-lg font-bold text-left">
                       {moment(inPersonEvent.startTime).format("h:mm ")} -{" "}
                       {moment(inPersonEvent.endTime).format("h:mm A")}
                     </h4>
-                    <h4 className="w-[40%] text-xl font-bold text-center">
+                    <h4 className="md:w-[40%] text-xl font-bold text-center">
                       {" "}
                       {inPersonEvent.title}
                     </h4>
-                    <h4 className="w-[25%] text-lg text-center">
+                    <h4 className="md:w-[25%] text-lg text-center">
                       {inPersonEvent.speaker}
                     </h4>
                   </div>
