@@ -173,8 +173,9 @@ function event({ speakers, sponsors }) {
             </button>
           </Link>
           <Link
-            href="https://drive.google.com/file/d/1r2w7SIpCMMroNstVRL-e903itOeIcWCe/view?usp=sharing"
+            href="/files/event_program.pdf"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <button
               className="
