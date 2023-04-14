@@ -189,3 +189,31 @@ export const RESOURCE_CATEGORIES_QUERY = gql`
     }
   }
 `;
+
+export const IN_PERSON_EVENTS_QUERY = gql`
+  {
+    inPersonEvents(first: 50) {
+      id
+      slug
+      title
+      startTime
+      speaker
+      isBreak
+      endTime
+      description {
+        html
+      }
+      speakers {
+        id
+        name
+        url
+        image {
+          height
+          url
+          width
+        }
+        description
+      }
+    }
+  }
+`;
