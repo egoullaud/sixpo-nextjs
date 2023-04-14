@@ -28,10 +28,16 @@ body {
 .in-person-event .event-description ul {
   list-style: disc;
   text-align: left;
-  padding-left: 4rem;
+  padding-left: 2rem;
   margin-bottom: 1rem;
 }
 
 .in-person-event .event-description p {
   margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .in-person-event .event-description ul {
+    padding-left: 4rem;
+  }
 }
