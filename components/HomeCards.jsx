@@ -44,7 +44,7 @@ function HomeCards() {
               py-2 px-4
               md:py-2 md:px-4 
               lg:px-8 lg:py-3 lg:text-lg 
-              hover:transition-all hover:duration-500 hover:bg-[#ff7070]"
+              hover:transition-all hover:duration-500 hover:bg-[#ff7070] ease-out duration-500"
           >
             Join us
           </button>
@@ -81,7 +81,7 @@ function HomeCards() {
               py-2 px-4
               md:py-2 md:px-4 
               lg:px-8 lg:py-3 lg:text-lg 
-              hover:transition-all hover:duration-500 hover:bg-[#ff7070]"
+              hover:transition-all hover:duration-500 hover:bg-[#ff7070] ease-out duration-500"
           >
             Visit Blog
           </button>
@@ -122,7 +122,7 @@ function HomeCards() {
               py-2 px-4
               md:py-2 md:px-4 
               lg:px-8 lg:py-3 lg:text-lg 
-              hover:transition-all hover:duration-500 hover:bg-[#ff7070]"
+              hover:transition-all hover:duration-500 hover:bg-[#ff7070] ease-out duration-500"
           >
             Learn More
           </button>
