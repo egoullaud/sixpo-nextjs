@@ -36,12 +36,12 @@ function Footer() {
         <ul className="flex mx-2 text-white text-2xl pt-2 bg-black">
           <Link href="https://www.instagram.com/yvrsixpo/" target="_blank">
             <li className="mr-2">
-              <AiFillInstagram />
+              <AiFillInstagram className="hover:transition-all hover:duration-500 hover:text-[#ffef91] ease-out duration-500" />
             </li>
           </Link>
           <Link href="https://www.facebook.com/yvrsixpo/" target="_blank">
             <li>
-              <AiFillFacebook />
+              <AiFillFacebook className="hover:transition-all hover:duration-500 hover:text-[#ffef91] ease-out duration-500" />
             </li>
           </Link>
         </ul>
@@ -59,14 +59,14 @@ function Footer() {
           Tla'amin Nations.
           <br /> Non-Indigenous folks in Canada please take a look at
           <Link href="https://www.whose.land/en/" target="_blank">
-            <span className="font-semibold text-[#ffef91] hover:underline hover:transition-all hover:duration-500 hover:text-[#ffa2a2] px-1">
+            <span className="font-semibold text-[#ffef91] hover:underline hover:transition-all hover:duration-500 hover:text-[#ffa2a2] px-1 ease-out duration-500">
               Whose Land
             </span>
           </Link>
           to learn more about the indigenous nation(s) on whose land you live!
         </p>
-        <Link href="https://egoullaud-portfolio.netlify.app/" target="_blank">
-          <p className="text-center pb-2 text-xs underline hover:transition-all hover:duration-500 hover:text-[#bcf0ff]">
+        <Link href="https://www.leegoullaud.com/" target="_blank">
+          <p className="text-center pb-2 text-xs underline hover:transition-all hover:duration-500 hover:text-[#bcf0ff] ease-out duration-500">
             Website by Lee Goullaud 2023
           </p>
         </Link>
