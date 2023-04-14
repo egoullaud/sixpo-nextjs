@@ -11,14 +11,23 @@ function schedule({ schedules }) {
   const sortedSchedules = [...upcomingSchedules, ...pastSchedules];
 
   return (
-    <div className="flex flex-col  bg-black bg-opacity-70 pb-[10rem] ">
+    <div className="flex flex-col items-center justify-center  bg-black bg-opacity-70 pb-[10rem] ">
       <h1
         className="font-bold w-[100%] text-white text-center mt-[1rem] py-[1rem] text-5xl
          md:text-5xl md:mt-[5rem] md:mb-[1rem] 
-         lg:text-7xl lg:mt-[7rem] lg:mb-[3rem]"
+         lg:text-7xl lg:mt-[7rem] lg:mb-[1rem]"
       >
-        Event Schedule
+        Virtual Event Schedule
       </h1>
+      <Link href="/schedule/inperson">
+        <button
+          className="font-bold text-white text-center my-[1rem] text-5xl px-3 py-2
+         md:text-5xl 
+         lg:text-4xl hover:shadow-md hover:bg-[#bcf0ff] hover:text-black hover:rounded-md hover:transition-all hover:duration-500 ease-out duration-500"
+        >
+          For In Person Schedule Click Here
+        </button>
+      </Link>
       <div className="flex flex-col md:flex-row justify-center items-center mt-4">
         <Link href="/event">
           <button
@@ -27,15 +36,16 @@ function schedule({ schedules }) {
             py-2 px-4 mx-1 mb-4
             md:py-2 md:px-4 md:mx-1
             lg:px-8 lg:py-3 lg:text-lg lg:mx-2
-            hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
+            hover:ease-in-out hover:duration-500 hover:bg-[#ff7070] ease-out duration-500"
           >
             Back to Event Page
           </button>
         </Link>
 
         <Link
-          href="https://drive.google.com/file/d/1r2w7SIpCMMroNstVRL-e903itOeIcWCe/view?usp=sharing"
+          href="/files/event_program.pdf"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <button
             className="
@@ -43,7 +53,7 @@ function schedule({ schedules }) {
                       py-2 px-4 mx-1 mb-4
                       md:py-2 md:px-4 md:mx-1
                       lg:px-8 lg:py-3 lg:text-lg lg:mx-2
-                      hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
+                      hover:ease-in-out hover:duration-500 hover:bg-[#ff7070] ease-out duration-500"
           >
             Event Program (PDF)
           </button>
