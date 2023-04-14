@@ -8,27 +8,33 @@ import SponsorCard from "@/components/SponsorCard";
 import Donations from "@/components/Donations";
 import Form from "@/components/Form";
 import { GraphQLClient } from "graphql-request";
-import { SPONSORS_QUERY } from "@/services";
+import { SPONSORS_QUERY, SCHEDULE_QUERY } from "@/services";
+import CurrentEvents from "@/components/CurrentEvents";
 
 export async function getStaticProps() {
   const { sponsors } = await new GraphQLClient(
     `${process.env.HYGRAPH_URL}`
   ).request(SPONSORS_QUERY);
+  const { schedules } = await new GraphQLClient(
+    `${process.env.HYGRAPH_URL}`
+  ).request(SCHEDULE_QUERY);
   return {
     props: {
       sponsors,
+      schedules,
     },
     revalidate: 86400,
   };
 }
 
-function home({ sponsors }) {
+function home({ sponsors, schedules }) {
   return (
     <div>
       {/* hero */}
       <section id="home-page-hero">
         <div className="relative z-0">
           <Image
+            className="lg:max-h-[80vh] object-cover"
             priority
             src={heroImg}
             alt="Six disabled people of color smile and pose in front of a concrete wall. Five people stand in the back, with the Black woman in the center holding up a chalkboard sign reading `disabled and here.` A South Asian person in a wheelchair sits in front. Photo attributed to Disabled and Here project."
@@ -54,7 +60,7 @@ function home({ sponsors }) {
                 Join us at Sixpo Festival 2023 |
                 <Link
                   href="/event"
-                  className=" lg:text-xl uppercase  hover:underline hover:transition-all hover:duration-500 hover:text-[#ffef91] hover:font-bold"
+                  className=" lg:text-xl uppercase  hover:underline hover:transition-all hover:duration-500 hover:text-[#ffef91] ease-out duration-500"
                 >
                   Learn More
                 </Link>
@@ -62,6 +68,10 @@ function home({ sponsors }) {
             </div>
           </div>
         </div>
+      </section>
+      {/* Today's Events */}
+      <section>
+        <CurrentEvents schedules={schedules} />
       </section>
       {/* about */}
       <section
