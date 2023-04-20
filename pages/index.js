@@ -125,7 +125,7 @@ function home({ sponsors, schedules, inPersonEvents }) {
                       py-2 px-4
                       md:py-2 md:px-4 
                       lg:px-8 lg:py-3 lg:text-lg 
-                      hover:transition-all hover:duration-500 hover:bg-[#ff7070]"
+                      hover:transition-all hover:duration-500 hover:bg-[#ff7070] ease-out duration-500"
                 >
                   Learn More
                 </button>
@@ -139,23 +139,9 @@ function home({ sponsors, schedules, inPersonEvents }) {
                       py-2 px-4
                       md:py-2 md:px-4 
                       lg:px-8 lg:py-3 lg:text-lg 
-                      hover:transition-all hover:duration-500 hover:bg-[#ff7070]"
+                      hover:transition-all hover:duration-500 hover:bg-[#ff7070]  ease-out duration-500"
                 >
                   Event Details
-                </button>
-              </Link>
-              <Link
-                className="w-[100%] mb-4 md:mx-1 flex justify-center"
-                href="/schedule"
-              >
-                <button
-                  className=" text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
-                      py-2 px-4
-                      md:py-2 md:px-4 
-                      lg:px-8 lg:py-3 lg:text-lg 
-                      hover:transition-all hover:duration-500 hover:bg-[#ff7070]"
-                >
-                  Event Schedule
                 </button>
               </Link>
             </div>
