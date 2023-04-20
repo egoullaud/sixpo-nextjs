@@ -8,7 +8,11 @@ import SponsorCard from "@/components/SponsorCard";
 import Donations from "@/components/Donations";
 import Form from "@/components/Form";
 import { GraphQLClient } from "graphql-request";
-import { SPONSORS_QUERY, SCHEDULE_QUERY } from "@/services";
+import {
+  SPONSORS_QUERY,
+  SCHEDULE_QUERY,
+  IN_PERSON_EVENTS_QUERY,
+} from "@/services";
 import CurrentEvents from "@/components/CurrentEvents";
 
 export async function getStaticProps() {
@@ -18,16 +22,20 @@ export async function getStaticProps() {
   const { schedules } = await new GraphQLClient(
     `${process.env.HYGRAPH_URL}`
   ).request(SCHEDULE_QUERY);
+  const { inPersonEvents } = await new GraphQLClient(
+    `${process.env.HYGRAPH_URL}`
+  ).request(IN_PERSON_EVENTS_QUERY);
   return {
     props: {
       sponsors,
       schedules,
+      inPersonEvents,
     },
     revalidate: 86400,
   };
 }
 
-function home({ sponsors, schedules }) {
+function home({ sponsors, schedules, inPersonEvents }) {
   return (
     <div>
       {/* hero */}
@@ -71,7 +79,7 @@ function home({ sponsors, schedules }) {
       </section>
       {/* Today's Events */}
       <section>
-        <CurrentEvents schedules={schedules} />
+        <CurrentEvents schedules={schedules} inPersonEvents={inPersonEvents} />
       </section>
       {/* about */}
       <section
