@@ -6,8 +6,8 @@ import { FaVideo } from "react-icons/fa";
 
 function EventCard({
   title,
-  briefDescription,
-  startDate,
+  speaker,
+  startTime,
   endTime,
   active,
   zoomLink,
@@ -37,10 +37,10 @@ function EventCard({
           {title}
         </h3>
         <h4 className="">
-          {moment(startDate).format("dddd, MMMM DD, YYYY h:mm A")} -{" "}
+          {moment(startTime).format("dddd, MMMM DD, YYYY h:mm ")} -{" "}
           {moment(endTime).format("h:mm A")}
         </h4>
-        <p className="text-base mt-2 mb-4">Speaker: {briefDescription} </p>
+        <p className="text-base mt-2 mb-4">Speaker: {speaker} </p>
 
         <p>
           <span className="font-bold">Event Type: </span>
