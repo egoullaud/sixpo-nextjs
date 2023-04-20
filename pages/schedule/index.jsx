@@ -59,7 +59,7 @@ function schedule({ schedules, eventPrograms }) {
             startDate={schedule.startDate}
             endTime={schedule.endTime}
             active={schedule.active}
-            briefDescription={schedule.briefDescription}
+            speaker={schedule.speaker}
             zoomLink={schedule.zoomLink}
             isLiveEvent={schedule.isLiveEvent}
             eventType={schedule.eventType}
