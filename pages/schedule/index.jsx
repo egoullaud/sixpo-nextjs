@@ -56,7 +56,7 @@ function schedule({ schedules, eventPrograms }) {
             key={schedule.id}
             id={schedule.id}
             title={schedule.title}
-            startDate={schedule.startDate}
+            startTime={schedule.startTime}
             endTime={schedule.endTime}
             active={schedule.active}
             speaker={schedule.speaker}
