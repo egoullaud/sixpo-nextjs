@@ -1,11 +1,12 @@
 import EventCard from "@/components/EventCard";
 import React from "react";
-import { SCHEDULE_QUERY } from "@/services";
+import { GET_PROGRAM_PDF, SCHEDULE_QUERY } from "@/services";
 import { GraphQLClient } from "graphql-request";
 import Link from "next/link";
 import { useState } from "react";
+import ProgramPDF from "@/components/ProgramPDF";
 
-function schedule({ schedules }) {
+function schedule({ schedules, eventPrograms }) {
   const pastSchedules = schedules.filter((schedule) => schedule.pastEvent);
   const upcomingSchedules = schedules.filter((schedule) => !schedule.pastEvent);
   const sortedSchedules = [...upcomingSchedules, ...pastSchedules];
@@ -42,22 +43,7 @@ function schedule({ schedules }) {
           </button>
         </Link>
 
-        <Link
-          href="/files/event_program.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button
-            className="
-                      text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
-                      py-2 px-4 mx-1 mb-4
-                      md:py-2 md:px-4 md:mx-1
-                      lg:px-8 lg:py-3 lg:text-lg lg:mx-2
-                      hover:ease-in-out hover:duration-500 hover:bg-[#ff7070] ease-out duration-500"
-          >
-            Event Program (PDF)
-          </button>
-        </Link>
+        <ProgramPDF eventPrograms={eventPrograms} />
       </div>
 
       {/*   flex flex-col justify-center items-center */}
@@ -95,9 +81,13 @@ export async function getServerSideProps() {
   const { schedules } = await new GraphQLClient(
     `${process.env.HYGRAPH_URL}`
   ).request(SCHEDULE_QUERY);
+  const { eventPrograms } = await new GraphQLClient(
+    `${process.env.HYGRAPH_URL}`
+  ).request(GET_PROGRAM_PDF);
   return {
     props: {
       schedules,
+      eventPrograms,
     },
   };
 }
