@@ -217,3 +217,15 @@ export const IN_PERSON_EVENTS_QUERY = gql`
     }
   }
 `;
+
+export const GET_PROGRAM_PDF = gql`
+  query ProgramPDF {
+    eventPrograms(where: { currentVersion: true }) {
+      id
+      title
+      programPdf {
+        url
+      }
+    }
+  }
+`;
