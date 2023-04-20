@@ -9,8 +9,9 @@ import Speakers from "@/components/Speakers";
 import Directions from "@/components/Directions";
 import Form from "@/components/Form";
 import { GraphQLClient, gql } from "graphql-request";
-import { SPEAKERS_QUERY, SPONSORS_QUERY } from "@/services";
+import { GET_PROGRAM_PDF, SPEAKERS_QUERY, SPONSORS_QUERY } from "@/services";
 import Recording from "@/components/Recording";
+import ProgramPDF from "@/components/ProgramPDF";
 
 export async function getStaticProps() {
   const { speakers } = await new GraphQLClient(
@@ -19,16 +20,20 @@ export async function getStaticProps() {
   const { sponsors } = await new GraphQLClient(
     `${process.env.HYGRAPH_URL}`
   ).request(SPONSORS_QUERY);
+  const { eventPrograms } = await new GraphQLClient(
+    `${process.env.HYGRAPH_URL}`
+  ).request(GET_PROGRAM_PDF);
   return {
     props: {
       speakers,
       sponsors,
+      eventPrograms,
     },
     revalidate: 86400,
   };
 }
 
-function event({ speakers, sponsors }) {
+function event({ speakers, sponsors, eventPrograms }) {
   return (
     <div>
       {/* hero */}
@@ -172,22 +177,9 @@ function event({ speakers, sponsors }) {
               Register with Eventbrite
             </button>
           </Link>
-          <Link
-            href="/files/event_program.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button
-              className="
-                      text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
-                      py-2 px-4 mx-1 mb-4
-                      md:py-2 md:px-4 md:mx-1
-                      lg:px-8 lg:py-3 lg:text-lg lg:mx-2
-                      hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
-            >
-              Event Program (PDF)
-            </button>
-          </Link>
+
+          <ProgramPDF eventPrograms={eventPrograms} />
+
           <Link href="/schedule">
             <button
               className="
