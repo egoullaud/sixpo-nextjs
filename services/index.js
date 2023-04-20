@@ -119,10 +119,10 @@ export const SCHEDULE_QUERY = gql`
       active
       eventType
       pastEvent
-      briefDescription
+      speaker
       zoomLink
       isLiveEvent
-      startDate
+      startTime
       endTime
       description {
         html
