@@ -1,10 +1,11 @@
 import React from "react";
 import Link from "next/link";
-import { IN_PERSON_EVENTS_QUERY } from "@/services";
+import { IN_PERSON_EVENTS_QUERY, GET_PROGRAM_PDF } from "@/services";
 import { GraphQLClient } from "graphql-request";
 import moment from "moment";
+import ProgramPDF from "@/components/ProgramPDF";
 
-function inperson({ inPersonEvents }) {
+function inperson({ inPersonEvents, eventPrograms }) {
   let currentDay = null;
   return (
     <div className="flex flex-col  bg-black bg-opacity-70 pb-[10rem] ">
@@ -29,22 +30,7 @@ function inperson({ inPersonEvents }) {
           </button>
         </Link>
 
-        <Link
-          href="/files/event_program.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <button
-            className="
-                    text-white bg-[#ff5b5b] rounded-lg font-bold shadow-lg
-                    py-2 px-4 mx-1 mb-4
-                    md:py-2 md:px-4 md:mx-1
-                    lg:px-8 lg:py-3 lg:text-lg lg:mx-2
-                    hover:ease-in-out hover:duration-500 hover:bg-[#ff7070]"
-          >
-            Event Program (PDF)
-          </button>
-        </Link>
+        <ProgramPDF eventPrograms={eventPrograms} />
       </div>
 
       {/*   flex flex-col justify-center items-center */}
@@ -120,9 +106,13 @@ export async function getServerSideProps() {
   const { inPersonEvents } = await new GraphQLClient(
     `${process.env.HYGRAPH_URL}`
   ).request(IN_PERSON_EVENTS_QUERY);
+  const { eventPrograms } = await new GraphQLClient(
+    `${process.env.HYGRAPH_URL}`
+  ).request(GET_PROGRAM_PDF);
   return {
     props: {
       inPersonEvents,
+      eventPrograms,
     },
   };
 }
