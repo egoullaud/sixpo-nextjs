@@ -243,7 +243,7 @@ function Navbar() {
             </h1>
             <ul className="flex flex-col items-start uppercase w-[100%] pt-2 md:text-2xl lg:hidden ">
               <li className="my-1 p-2 w-[100%]  hover:ease-in-out hover:duration-500 hover:underline hover:text-[#ffef91] ease-out duration-500">
-                <Link href="/home">Home</Link>
+                <Link href="/">Home</Link>
               </li>
               <li className="my-1 p-2 w-[100%]  hover:ease-in-out hover:duration-500 hover:underline hover:text-[#ffef91] ease-out duration-500">
                 <Link href="/about">About</Link>
