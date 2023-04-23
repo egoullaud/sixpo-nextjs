@@ -13,7 +13,7 @@ import {
   SCHEDULE_QUERY,
   IN_PERSON_EVENTS_QUERY,
 } from "@/services";
-import CurrentEvents from "@/components/CurrentEvents";
+// import CurrentEvents from "@/components/CurrentEvents";
 
 export async function getStaticProps() {
   const { sponsors } = await new GraphQLClient(
@@ -78,9 +78,9 @@ function home({ sponsors, schedules, inPersonEvents }) {
         </div>
       </section>
       {/* Today's Events */}
-      <section>
+      {/* <section>
         <CurrentEvents schedules={schedules} inPersonEvents={inPersonEvents} />
-      </section>
+      </section> */}
       {/* about */}
       <section
         className="md:mx-[2rem] lg:mx-[3rem] lg:mt-[5rem] md:mt-[5rem]"
