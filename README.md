@@ -1,38 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Sixpo - Sexuality. Inclusion, Exploration 
 
-First, run the development server:
+Visit the site: https://sixpo.ca/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+![3](https://user-images.githubusercontent.com/108373927/234083248-98904d29-1a08-43ce-a42f-7281098f4bd0.png)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This is a website I designed and built for Sixpo, a non-profit organization for disabled folks that hosts a month long online and in person event with speakers, workshops, and community building activities related to sexual wellness, relationships, and dating. 
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Tech Stack: React, Next, Tailwind, GraphQL, Hygraph(GraphCMS), GraphQL-request
+![ta](https://user-images.githubusercontent.com/108373927/234083352-f5a29dab-e19f-4494-9866-121b7daaf319.png)
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Features
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- This web app is fully responsive across all devices
+- Emphasis on Web Accessiblity practices
+- A blog and resources page with dyanmic routing to posts and resource categories
+- Connected to headless CMS that automatically updates and redeploys with changes to the API content
+- When event is in session, there are daily updates for current events taking place
+- Online Schedule includes Zoom Links and toggle-features for descriptions
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+![4](https://user-images.githubusercontent.com/108373927/234083367-49a16341-ed14-4263-8285-21d2d50cd7a1.png)
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
