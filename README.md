@@ -8,7 +8,7 @@ Visit the site: https://sixpo.ca/
 This is a website I designed and built for Sixpo, a non-profit organization for disabled folks that hosts a month long online and in person event with speakers, workshops, and community building activities related to sexual wellness, relationships, and dating. 
 
 ## Tech Stack: React, Next, Tailwind, GraphQL, Hygraph(GraphCMS), GraphQL-request
-![ta](https://user-images.githubusercontent.com/108373927/234083352-f5a29dab-e19f-4494-9866-121b7daaf319.png)
+
 
 ## Features
 
@@ -20,5 +20,4 @@ This is a website I designed and built for Sixpo, a non-profit organization for 
 - Online Schedule includes Zoom Links and toggle-features for descriptions
 
 
-![4](https://user-images.githubusercontent.com/108373927/234083367-49a16341-ed14-4263-8285-21d2d50cd7a1.png)
 
