@@ -3,11 +3,13 @@
 
 Visit the site: https://sixpo.ca/
 
+## Tech Stack: 
+React, Next, Tailwind, GraphQL, Hygraph(GraphCMS)
+
+
 ![3](https://user-images.githubusercontent.com/108373927/234083248-98904d29-1a08-43ce-a42f-7281098f4bd0.png)
 
 This is a website I designed and built for Sixpo, a non-profit organization for disabled folks that hosts a month long online and in person event with speakers, workshops, and community building activities related to sexual wellness, relationships, and dating. 
-
-## Tech Stack: React, Next, Tailwind, GraphQL, Hygraph(GraphCMS), GraphQL-request
 
 
 ## Features
@@ -20,7 +22,10 @@ This is a website I designed and built for Sixpo, a non-profit organization for 
 - Online Schedule includes Zoom Links and toggle-features for descriptions
 
 
-## Deployment
-This app is deployed with Vercel
+## Build & Deployment
+
+This app was built with create-next-app and deployed on Vercel. 
+Stack: React, Next, Tailwind, GraphQL, Hygraph(GraphCMS)
+Dependencies: Moment, GraphQL-Request, dotenv, graphQL, react-icons
 
 If you wish to contribute, please make a pull request with a detailed comment on what you did and why!
