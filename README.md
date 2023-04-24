@@ -20,4 +20,7 @@ This is a website I designed and built for Sixpo, a non-profit organization for 
 - Online Schedule includes Zoom Links and toggle-features for descriptions
 
 
+## Deployment
+This app is deployed with Vercel
 
+If you wish to contribute, please make a pull request with a detailed comment on what you did and why!
